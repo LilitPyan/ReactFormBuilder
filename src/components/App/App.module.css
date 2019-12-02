@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+.app_container {
+  height: 1100px;
+  width: 1000px;
+  display: flex;
+  margin: 10px auto;
+}
+.drag_zone {
+  height: 485px;
+  width: 187px;
+  margin-left: 20px;
+  margin-top: 15px;
+  font-size: 18px;
+}
+.drop_zone {
+  width: 700px;
+  margin-top: 15px;
+  font-size: 18px;
+}
+.drop_ul{
+  min-height: 700px;
+  border-style: ridge;
+  background-color: whitesmoke;
+}
+ul{
+  list-style-type: none;
+}
+.drag_zone li{
+  margin-top: 10px;
+  font-size: 15px;
+  border: 1px lightsteelblue dashed;
+  height: 30px;
+  width: 200px;
+  padding-top: 12px;
+  padding-left: 20px;
+  margin-right: 10px;
+  margin-left: -32px;
+  cursor: pointer;
+  color: darkslategray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.li_icon{
+  padding-right: 15px;
+  font-size: 13px;
+  color: darkslategray;
+}
+.drag_drop_zone {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+.drag_drop_item li{
+  border-style: none;
+  cursor:move;
+}
+.tool_title {
+  margin-left: 85px;
+  color: darkslategray;
+  font-weight: bolder;
+  height: 50px;
+}
+.form_title{
+ margin-left: 5px;
+  color: darkslategray;
+  font-weight: bolder;
+}
+.btn{
+  margin-left: 412px;
+  width: 120px;
+  height: 35px;
+  background-color: darkslategray;
+  color: white;
+  outline: none;
+  margin-bottom: -10px;
+  margin-top: -7px;
+}

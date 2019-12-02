@@ -1,0 +1,35 @@
+.linebreak{
+    font-weight: bolder;
+    margin-top: 18px;
+    background-color: white;
+    border-style: groove;
+    width: 620px;
+    height: 30px;
+    cursor: move;
+}
+.line{
+    background-color: darkslategray;
+     width: 490px;
+     margin-left: 15px;
+     height: 2px;
+     margin-top: 11px;
+}
+.dButton {
+    float: right;
+    margin-top: -28px;
+    margin-right: 65px;
+    outline: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 2px;
+    background-color: white;
+}
+.icon{
+    height: 17px;
+    width: 17px;
+    margin-top: -2px;
+    margin-left: -4px;
+    color: darkslategray;
+    background-color: white;
+
+}
