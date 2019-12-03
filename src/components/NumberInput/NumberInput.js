@@ -1,14 +1,22 @@
 import React from 'react';
-import './NumberInput.css';
+import {FiEdit} from 'react-icons/fi';
+import {MdDelete} from 'react-icons/md';
+import style from './NumberInput.module.css';
 
-export default function NumberInput(props) {
+class NumberInput extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  render() {
     return (
-      <div className = 'number_input' id='9'>
-          <label>Number Input</label>
-          <br/>
-          <input type = 'number'/>
-          <button className = 'number_input_btn'>Edit</button>
-          <button className = 'number_input_btn'>Delete</button>
+      <div className={style.number_input}>
+        <label>Number Input...</label>
+        <input type='number' disabled className={style.input_item}/>
+        <button className={style.eButton}><FiEdit className={style.icon} /></button>
+        <button className={style.dButton}><MdDelete className={style.icon} /></button>
       </div>
-    );
+    )
+  }
 }
+export default NumberInput;

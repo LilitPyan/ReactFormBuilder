@@ -13,6 +13,7 @@ class HeaderText extends React.Component {
     return (
       <div className={style.header}>
         <label>Header Text...</label>
+        <input type='text' disabled className={style.input_item}/>
         <button className={style.eButton}><FiEdit className={style.icon} /></button>
         <button className={style.dButton}><MdDelete className={style.icon} /></button>
       </div>

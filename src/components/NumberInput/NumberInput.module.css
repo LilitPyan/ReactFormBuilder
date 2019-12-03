@@ -1,43 +1,49 @@
-.dropdown{
+.number_input{
     font-weight: bolder;
     margin-top: 18px;
     padding-left: 20px;
     padding-top: 10px;
     width: 600px;
-    height: 30px;
+    height: 80px;
     cursor: move;
 }
-.dropdown:hover{
+.number_input:hover{
     background-color: white;
     border-style: groove;
 }
-.select{
-    width: 430px;
+.input_item{
+    width: 400px;
     height: 30px;
-    margin-top: -5px;
-    color: darkslategray;
-    font-size: 20px;
-    font-weight: bold;
+    float: bottom;
+    background-color:white;
+    border-radius: 3px;
+    border-style: groove;
+    margin-top: 15px;
+    padding: 0;
+    margin-right: 0;
 }
-option{
-    font-size: 20px;
+label{
+    font-size: 18px;
     color: darkslategray;
+    height: 15px;
+    width:500px;
+    display: block;
 }
 .eButton {
     cursor: pointer;
     outline: none;
-    float: right;
-    margin-right: 110px;
+    margin-left: 60px;
     width: 25px;
     height: 25px;
     border-radius: 2px;
     background-color: white;
+    margin-top: 20px;
 }
-
 .dButton {
+    cursor: pointer;
     outline: none;
-    float: right;
-    margin-right: -70px;
+    margin-left: 15px;
+    margin-top: -80px;
     width: 25px;
     height: 25px;
     border-radius: 2px;
@@ -50,5 +56,4 @@ option{
     margin-left: -4px;
     color: darkslategray;
     background-color: white;
-
 }

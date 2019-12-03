@@ -1,15 +1,22 @@
 import React from 'react';
-import './TextInput.css';
+import {FiEdit} from 'react-icons/fi';
+import {MdDelete} from 'react-icons/md';
+import style from './TextInput.module.css';
 
-const TextInput = (props) => {
-  return (
-    <div className = 'text_input' id='8'>
-      <label>Text Input</label>
-      <br/>
-      <input type = 'text'/>
-      <button className = 'text_input_btn'>Edit</button>
-      <button className = 'text_input_btn'>Delete</button>
-    </div>
-  );
+class TextInput extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className={style.text_input}>
+        <label>Text Input...</label>
+        <input type='text' disabled className={style.input_item}/>
+        <button className={style.eButton}><FiEdit className={style.icon} /></button>
+        <button className={style.dButton}><MdDelete className={style.icon} /></button>
+      </div>
+    )
+  }
 }
 export default TextInput;

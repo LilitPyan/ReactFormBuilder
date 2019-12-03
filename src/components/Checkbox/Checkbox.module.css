@@ -1,27 +1,34 @@
-.dropdown{
+.checkbox{
     font-weight: bolder;
     margin-top: 18px;
     padding-left: 20px;
     padding-top: 10px;
     width: 600px;
-    height: 30px;
+    height: 155px;
     cursor: move;
 }
-.dropdown:hover{
+.checkbox:hover{
     background-color: white;
     border-style: groove;
 }
-.select{
-    width: 430px;
-    height: 30px;
+.form{
+    width: 600px;
+    height: 90px;
     margin-top: -5px;
     color: darkslategray;
     font-size: 20px;
     font-weight: bold;
 }
-option{
-    font-size: 20px;
-    color: darkslategray;
+.title{
+    width: 600px;
+    height: 25px;
+}
+.label{
+    font-size: 16px;
+    font-weight: bold;
+    height: 20px;
+    margin: 0;
+    padding: 0;
 }
 .eButton {
     cursor: pointer;
@@ -33,7 +40,6 @@ option{
     border-radius: 2px;
     background-color: white;
 }
-
 .dButton {
     outline: none;
     float: right;
@@ -50,5 +56,4 @@ option{
     margin-left: -4px;
     color: darkslategray;
     background-color: white;
-
 }

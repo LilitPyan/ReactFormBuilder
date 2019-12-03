@@ -1,15 +1,36 @@
 import React from 'react';
-import './Checkbox.css';
+import style from'./Checkbox.module.css';
+import {FiEdit} from 'react-icons/fi';
+import {MdDelete} from 'react-icons/md';
 
-export default function Checkbox(props) {
-    return (
-      <div className = 'checkbox' id='6'>
-        <label>CheckBox</label>
-        <br/>
-        <input type = 'checkbox'/>
-        <button className = 'checkbox_btn'>Edit</button>
-        <button className = 'checkbox_btn'>Delete</button>
-      </div>
-    );
+class Checkbox extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    render() {
+        return (
+          <div className={style.checkbox}>
+              <form className={style.form}>
+                  <label className={style.title}>Checkbox...</label><br/>
+                  <label className={style.label}>
+                      <input type='checkbox' disabled/>
+                      Place holder option 1
+                  </label><br/>
+                  <label className={style.label}>
+                      <input type='checkbox' disabled/>
+                      Place holder option 2
+                  </label><br/>
+                  <label className={style.label}>
+                      <input type='checkbox' disabled/>
+                      Place holder option 3
+                  </label>
+              </form>
+              <button className={style.eButton}><FiEdit className={style.icon}/></button>
+              <button className={style.dButton}><MdDelete className={style.icon}/></button>
+          </div>
+        )
+    }
 }
+export default Checkbox;
 

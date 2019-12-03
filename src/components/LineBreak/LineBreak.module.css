@@ -1,11 +1,13 @@
 .linebreak{
     font-weight: bolder;
     margin-top: 18px;
-    background-color: white;
-    border-style: groove;
     width: 620px;
     height: 30px;
     cursor: move;
+}
+.linebreak:hover{
+    background-color: white;
+    border-style: groove;
 }
 .line{
     background-color: darkslategray;
@@ -17,7 +19,7 @@
 .dButton {
     float: right;
     margin-top: -28px;
-    margin-right: 65px;
+    margin-right: 73px;
     outline: none;
     width: 25px;
     height: 25px;

@@ -1,27 +1,31 @@
-.dropdown{
+.multiple_choice{
     font-weight: bolder;
     margin-top: 18px;
     padding-left: 20px;
     padding-top: 10px;
-    width: 600px;
-    height: 30px;
-    cursor: move;
-}
-.dropdown:hover{
     background-color: white;
     border-style: groove;
+    width: 600px;
+    height: 120px;
+    cursor: move;
 }
-.select{
-    width: 430px;
-    height: 30px;
+.form{
+    width: 600px;
+    height: 90px;
     margin-top: -5px;
     color: darkslategray;
     font-size: 20px;
     font-weight: bold;
 }
-option{
-    font-size: 20px;
-    color: darkslategray;
+.title{
+    width: 600px;
+    height: 25px;
+}
+.label{
+    padding-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    height: 25px;
 }
 .eButton {
     cursor: pointer;
@@ -33,7 +37,6 @@ option{
     border-radius: 2px;
     background-color: white;
 }
-
 .dButton {
     outline: none;
     float: right;
@@ -50,5 +53,4 @@ option{
     margin-left: -4px;
     color: darkslategray;
     background-color: white;
-
 }
