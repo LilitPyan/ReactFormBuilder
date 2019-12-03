@@ -1,13 +1,16 @@
 .linebreak{
-    font-weight: bolder;
-    margin-top: 18px;
-    width: 620px;
+    width: 580px;
     height: 30px;
+    margin-top: 15px;
+    padding-left: 25px;
+    display: flex;
     cursor: move;
-}
-.linebreak:hover{
     background-color: white;
     border-style: groove;
+}
+.linebreak:hover{
+    border-radius: 10px;
+    background-color: lightsteelblue;
 }
 .line{
     background-color: darkslategray;
@@ -17,12 +20,12 @@
      margin-top: 11px;
 }
 .dButton {
-    float: right;
-    margin-top: -28px;
-    margin-right: 73px;
+    cursor: pointer;
     outline: none;
-    width: 25px;
-    height: 25px;
+    margin-top: 5px;
+    margin-left: 27px;
+    width: 20px;
+    height: 20px;
     border-radius: 2px;
     background-color: white;
 }

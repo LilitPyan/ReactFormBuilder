@@ -1,45 +1,61 @@
-.paragraph{
-    font-weight: bolder;
-    margin-top: 18px;
-    padding-left: 20px;
-    padding-top: 10px;
-    width: 600px;
+.paragraph {
+    width: 580px;
     height: 50px;
+    margin-top: 15px;
+    padding-left: 25px;
+    display: flex;
     cursor: move;
-}
-.paragraph:hover{
     background-color: white;
     border-style: groove;
 }
-label{
-    font-size: 18px;
+.paragraph:hover {
+    border-radius: 10px;
+    background-color: lightsteelblue;
+}
+.title{
+    font-size: 17px;
     color: darkslategray;
+    font-weight: bolder;
+}
+p{
+    margin-top: 15px;
     height: 15px;
-    display: block;
+    width: 300px;
+}
+.text_area{
+    margin-top: 5px;
+    font-size: 17px;
+    height: 30px;
+    width: 290px;
+    border-radius: 5px;
+    outline: none;
+    border-style: groove;
 }
 .eButton {
     cursor: pointer;
     outline: none;
-    margin-left: 460px;
-    width: 25px;
-    height: 25px;
+    margin-top: 5px;
+    margin-left: 200px;
+    width: 20px;
+    height: 20px;
     border-radius: 2px;
     background-color: white;
 }
 .dButton {
     cursor: pointer;
     outline: none;
+    margin-top: 5px;
     margin-left: 15px;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 2px;
     background-color: white;
 }
 .icon{
-    height: 17px;
-    width: 17px;
-    margin-top: -2px;
-    margin-left: -4px;
+    height: 15px;
+    width: 15px;
+    margin-top: -1px;
+    margin-left: -5px;
     color: darkslategray;
     background-color: white;
 }

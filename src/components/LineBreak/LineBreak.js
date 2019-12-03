@@ -11,7 +11,9 @@ class LineBreak extends React.Component {
         return (
           <div className={style.linebreak}>
               <p className={style.line}/>
-              <button className={style.dButton}><MdDelete className={style.icon}/></button>
+              <button className={style.dButton}>
+                <MdDelete className={style.icon}/>
+              </button>
           </div>
         )
     }
