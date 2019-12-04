@@ -9,14 +9,29 @@ class Checkbox extends React.Component {
     this.state = {
       isDeleting: false,
       isEditing: false,
-      values: [{value: 'Option 1'}, {value: 'Option 2'}, {value: 'Option 3'}]
+      isVisible: false,
+      values: [
+        {value: 'Option 1'},
+        {value: 'Option 2'},
+        {value: 'Option 3'}
+      ]
     }
   }
 
-  handleChange = (ev) => {
+  mouseOver = () => {
     this.setState({
-      values:[{...this.state.values},{value: ev.target.value}]
-    });
+      isVisible: true
+    })
+  };
+
+  mouseLeave = () => {
+    this.setState({
+      isVisible: false
+    })
+  };
+
+  handleChange = (ev) => {
+    this.setState({});
   };
 
   edit = (ev) => {
@@ -35,10 +50,27 @@ class Checkbox extends React.Component {
 
   render() {
     return (
-      <div className={style.checkbox}>
+      <div
+        className={style.checkbox}
+        onMouseOver={this.mouseOver}
+        onMouseLeave={this.mouseLeave}
+      >
+        {this.state.isVisible &&
+        <>
+          <button className={style.eButton}>
+            <FiEdit className={style.icon} onClick={this.edit}/>
+          </button>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
+        </>
+        }
         {!this.state.isEditing ? (
           <form className={style.form}>
-            <label className={style.title}>Checkbox...</label><br/>
+            <label className={style.title}>
+              Checkbox...
+            </label>
+            <br/>
             {this.state.values.map((checkbox) => {
               return (
                 <label className={style.label}>
@@ -50,11 +82,11 @@ class Checkbox extends React.Component {
             <br/>
           </form>
         ) : (
-          <div>
+          <div className={style.text_zone}>
             {this.state.values.map((checkbox) => {
               return (
                 <textarea
-                  className={style.box}
+                  className={style.textarea}
                   onChange={this.handleChange}
                   value={this.state.value}
                 >
@@ -63,16 +95,11 @@ class Checkbox extends React.Component {
               )
             })}
           </div>
-            )}
-            <button className={style.eButton}>
-              <FiEdit className={style.icon} onClick={this.edit}/>
-            </button>
-            <button className={style.dButton}>
-              <MdDelete className={style.icon} onClick={this.deleted}/>
-            </button>
-          </div>
-        )
-        }
-        }
-        export default Checkbox;;
+        )}
+      </div>
+    )
+  }
+}
+
+export default Checkbox;
 

@@ -9,9 +9,26 @@ class MultipleChoice extends React.Component {
     this.state = {
       isDeleting: false,
       isEditing: false,
-      values: [{value: 'Radio 1'}, {value: 'Radio 2'}, {value: 'Radio 3'}]
+      isVisible: false,
+      values: [
+        {value: 'Radio 1'},
+        {value: 'Radio 2'},
+        {value: 'Radio 3'}
+        ]
     }
   }
+
+  mouseOver = () => {
+    this.setState({
+      isVisible: true
+    })
+  };
+
+  mouseLeave = () => {
+    this.setState({
+      isVisible: false
+    })
+  };
 
   handleChange = (ev) => {
     this.setState({
@@ -35,7 +52,11 @@ class MultipleChoice extends React.Component {
 
   render() {
     return (
-      <div className={style.multiple_choice}>
+      <div
+        className={style.multiple_choice}
+        onMouseOver={this.mouseOver}
+        onMouseLeave={this.mouseLeave}
+      >
         {!this.state.isEditing ? (
           <form className={style.form}>
             <label className={style.title}>Multiple choice..</label><br/>
@@ -64,12 +85,16 @@ class MultipleChoice extends React.Component {
             })}
           </div>
         )}
-        <button className={style.eButton}>
-          <FiEdit className={style.icon} onClick={this.edit}/>
-        </button>
-        <button className={style.dButton}>
-          <MdDelete className={style.icon} onClick={this.deleted}/>
-        </button>
+        {this.state.isVisible &&
+        <>
+          <button className={style.eButton}>
+            <FiEdit className={style.icon} onClick={this.edit}/>
+          </button>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
+        </>
+        }
       </div>
     )
   }

@@ -6,11 +6,10 @@
     display: flex;
     cursor: move;
     background-color: white;
-    border-style: groove;
 }
 .linebreak:hover{
     border-radius: 10px;
-    background-color: lightsteelblue;
+    border-style: groove;
 }
 .line{
     background-color: darkslategray;

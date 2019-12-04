@@ -9,9 +9,23 @@ class Label extends React.Component {
     this.state = {
       isDeleting: false,
       isEditing: false,
+      isVisible: false,
       value: 'Label...'
     }
   }
+
+  mouseOver = () => {
+    this.setState({
+      isVisible: true
+    })
+  };
+
+  mouseLeave = () => {
+    this.setState({
+      isVisible: false
+    })
+  };
+
 
   handleChange = (ev) => {
     this.setState({
@@ -35,7 +49,11 @@ class Label extends React.Component {
 
   render() {
     return (
-      <div className={style.label} id='2'>
+      <div
+        className={style.label}
+        onMouseOver={this.mouseOver}
+        onMouseLeave={this.mouseLeave}
+      >
         {!this.state.isEditing ? (
           <label className={style.title}>
             {this.state.value}
@@ -49,12 +67,16 @@ class Label extends React.Component {
              Label...
             </textarea>
         )}
-        <button className={style.eButton}>
-          <FiEdit className={style.icon} onClick={this.edit}/>
-        </button>
-        <button className={style.dButton}>
-          <MdDelete className={style.icon} onClick={this.deleted}/>
-        </button>
+        {this.state.isVisible &&
+        <>
+          <button className={style.eButton}>
+            <FiEdit className={style.icon} onClick={this.edit}/>
+          </button>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
+        </>
+        }
       </div>
     )
   }

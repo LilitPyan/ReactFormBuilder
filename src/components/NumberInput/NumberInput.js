@@ -9,9 +9,22 @@ class NumberInput extends React.Component {
     this.state = {
       isDeleting: false,
       isEditing: false,
+      isVisible: false,
       value: 'Number input...'
     }
   }
+
+  mouseOver = () => {
+    this.setState({
+      isVisible: true
+    })
+  };
+
+  mouseLeave = () => {
+    this.setState({
+      isVisible: false
+    })
+  };
 
   handleChange = (ev) => {
     this.setState({
@@ -35,7 +48,11 @@ class NumberInput extends React.Component {
 
   render() {
     return (
-      <div className={style.number_input}>
+      <div
+        className={style.number_input}
+        onMouseOver={this.mouseOver}
+        onMouseLeave={this.mouseLeave}
+      >
         {!this.state.isEditing ? (
           <div>
             <p className={style.p}>
@@ -43,7 +60,7 @@ class NumberInput extends React.Component {
             </p>
             <input type='number' className={style.text_area} disabled/>
           </div>
-        ):(
+        ) : (
           <textarea
             className={style.text_a}
             onChange={this.handleChange}
@@ -52,12 +69,16 @@ class NumberInput extends React.Component {
             Text input...
             </textarea>
         )}
-        <button className={style.eButton}>
-          <FiEdit className={style.icon} onClick={this.edit}/>
-        </button>
-        <button className={style.dButton}>
-          <MdDelete className={style.icon} onClick={this.deleted}/>
-        </button>
+        {this.state.isVisible &&
+        <>
+          <button className={style.eButton}>
+            <FiEdit className={style.icon} onClick={this.edit}/>
+          </button>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
+        </>
+        }
       </div>
     )
   }

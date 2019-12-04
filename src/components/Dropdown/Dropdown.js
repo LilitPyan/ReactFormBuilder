@@ -9,21 +9,29 @@ class Dropdown extends React.Component {
     this.state = {
       isDeleting: false,
       isEditing: false,
-      options: [
-        {name:'a', value:'a'},
-        {name:'b', value:'b'},
-        {name:'c', value:'c'}
-        ],
+      isVisible: false,
+      options: [],
+      option: {value: ''}
     }
   }
 
-  handleChange = (ev) => {
+  mouseOver = () => {
     this.setState({
+      isVisible: true
     })
   };
 
+  mouseLeave = () => {
+    this.setState({
+      isVisible: false
+    })
+  };
 
-  handleSubmit = () => {
+  handleChangeValue = (ev) => {
+    let n = ev.target.value;
+    this.setState({
+
+    })
   };
 
   edit = (ev) => {
@@ -41,40 +49,43 @@ class Dropdown extends React.Component {
   };
 
   render() {
-
     return (
-      <div className={style.dropdown}>
+      <div
+        className={style.dropdown}
+        onMouseOver={this.mouseOver}
+        onMouseLeave={this.mouseLeave}
+      >
+        {this.state.isVisible &&
+        <>
+          <button className={style.eButton}>
+            <FiEdit className={style.icon} onClick={this.edit}/>
+          </button>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
+        </>
+        }
         {!this.state.isEditing ? (
-          <select className={style.title}>
-            {this.state.options.map((option)=>{
-              return(
-                <option name={option.name}>{option.value}</option>
+          <select className={style.select}>
+            {this.state.options.map((option) => {
+              return (
+                <option name={option.name}>
+                  {option.value}
+                </option>
               )
-            })
-            }
+            })}
           </select>
         ) : (
           <div className={style.edit_area}>
             <input
-              className={style.drop_title}
-              placeholder='Dropdown title'
-              onChange={this.handleChange}
-              name='value'
-            />
-            <input
               className={style.text_area}
               placeholder='Dropdown option'
-              onChange={this.handleChange}
-              name='name'
+              onChange={this.handleChangeValue}
+              value={this.state.option.value}
+              name='value'
             />
           </div>
         )}
-        <button className={style.eButton}>
-          <FiEdit className={style.icon} onClick={this.edit} onSubmit={this.handleSubmit}/>
-        </button>
-        <button className={style.dButton}>
-          <MdDelete className={style.icon} onClick={this.deleted}/>
-        </button>
       </div>
     )
   }

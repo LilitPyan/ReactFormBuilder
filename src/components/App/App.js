@@ -1,7 +1,7 @@
 import React from 'react';
-import FormPreview from "../FormPreview/FormPreview";
 import ITEMS from './data'
 import style from './App.module.css';
+import ControlledPopup from "../FormPreview/FormPreview";
 
 class App extends React.Component {
   constructor(props) {
@@ -10,9 +10,8 @@ class App extends React.Component {
     this.state = {
       dropItems: [],
       display: false
-    };
+    }
   }
-
   onDragStart = (e, v) => {
     this.draggedItem = v;
     e.dataTransfer.dropEffect = "move";
@@ -85,7 +84,7 @@ class App extends React.Component {
           <span className={style.form_title}>
             React Form Builder
           </span>
-           <FormPreview />
+          <ControlledPopup dropItems={this.state.dropItems}/>
           <ul className={style.drop_ul} onDrop={this.onDrop} onDragOver={this.allowDrop}>
             {this.state.dropItems.map((item, index) => {
               return (

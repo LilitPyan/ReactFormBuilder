@@ -9,9 +9,22 @@ class Paragraph extends React.Component {
     this.state = {
       isDeleting: false,
       isEditing: false,
+      isVisible: false,
       value: 'Paragraph...'
     }
   }
+
+  mouseOver = () => {
+    this.setState({
+      isVisible: true
+    })
+  };
+
+  mouseLeave = () => {
+    this.setState({
+      isVisible: false
+    })
+  };
 
   handleChange = (ev) => {
     this.setState({
@@ -35,7 +48,11 @@ class Paragraph extends React.Component {
 
   render() {
     return (
-      <div className={style.paragraph} id='3'>
+      <div
+        className={style.paragraph}
+        onMouseOver={this.mouseOver}
+        onMouseLeave={this.mouseLeave}
+      >
         {!this.state.isEditing ? (
           <p className={style.title}>
             {this.state.value}
@@ -49,12 +66,16 @@ class Paragraph extends React.Component {
             Paragraph...
             </textarea>
         )}
-        <button className={style.eButton}>
-          <FiEdit className={style.icon} onClick={this.edit}/>
-        </button>
-        <button className={style.dButton}>
-          <MdDelete className={style.icon} onClick={this.deleted}/>
-        </button>
+        {this.state.isVisible &&
+        <>
+          <button className={style.eButton}>
+            <FiEdit className={style.icon} onClick={this.edit}/>
+          </button>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
+        </>
+        }
       </div>
     )
   }

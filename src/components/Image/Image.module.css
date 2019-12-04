@@ -6,18 +6,16 @@
     display: flex;
     cursor: move;
     background-color: white;
-    border-style: groove;
 }
 .image:hover {
     border-radius: 10px;
-    background-color: lightsteelblue;
+    border-style: groove;
 }
 .title{
     font-size: 17px;
     color: darkslategray;
     font-weight: bolder;
 }
-
 .text_area{
     margin-top: 5px;
     font-size: 17px;

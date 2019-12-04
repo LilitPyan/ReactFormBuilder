@@ -5,12 +5,10 @@
     padding-left: 25px;
     display: flex;
     cursor: move;
-    background-color: white;
-    border-style: groove;
 }
 .label:hover {
     border-radius: 10px;
-    background-color: lightsteelblue;
+    border-style: groove;
 }
 .title{
     margin-top: 15px;
