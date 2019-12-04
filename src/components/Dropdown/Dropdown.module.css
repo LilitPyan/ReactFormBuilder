@@ -17,6 +17,9 @@
     font-size: 17px;
     height: 30px;
     width: 300px;
+    border-radius: 5px;
+    border-style: groove;
+    outline: none;
     color: darkslategray;
 }
 .select{
@@ -26,13 +29,32 @@
     width: 300px;
     color: darkslategray;
 }
+select{
+    outline: none;
+}
+textarea{
+    outline: none;
+}
+.drop_title{
+    height: 15px;
+    width: 290px;
+    border-radius: 5px;
+    border-style: groove;
+    outline: none;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.edit_area{
+    height: 90px;
+    width: 300px;
+}
 .text_area{
+    outline: none;
     margin-top: 5px;
     font-size: 17px;
     height: 30px;
     width: 290px;
     border-radius: 5px;
-    outline: none;
     border-style: groove;
 }
 .eButton {

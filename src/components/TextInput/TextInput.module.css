@@ -1,59 +1,66 @@
-.text_input{
-    font-weight: bolder;
-    margin-top: 18px;
-    padding-left: 20px;
-    padding-top: 10px;
-    width: 600px;
-    height: 80px;
+.text_input {
+    width: 580px;
+    height: 75px;
+    margin-top: 15px;
+    padding-left: 25px;
+    display: flex;
     cursor: move;
-}
-.text_input:hover{
     background-color: white;
     border-style: groove;
 }
-.input_item{
-    width: 400px;
-    height: 30px;
-    float: bottom;
-    background-color:white;
-    border-radius: 3px;
-    border-style: groove;
-    margin-top: 15px;
-    padding: 0;
-    margin-right: 0;
+.text_input:hover {
+    border-radius: 10px;
+    background-color: lightsteelblue;
 }
-label{
-    font-size: 18px;
-    color: darkslategray;
+p{
+    margin-top: 5px;
+    font-size: 15px;
     height: 15px;
-    width:500px;
-    display: block;
+    width: 300px;
+    color: darkslategray;
+}
+.text_area {
+    font-size: 17px;
+    height: 27px;
+    width: 300px;
+    border-radius: 5px;
+    outline: none;
+    border-style: groove;
 }
 .eButton {
     cursor: pointer;
     outline: none;
-    margin-left: 60px;
-    width: 25px;
-    height: 25px;
+    margin-top: 5px;
+    margin-left: 200px;
+    width: 20px;
+    height: 20px;
     border-radius: 2px;
     background-color: white;
-    margin-top: 20px;
 }
 .dButton {
     cursor: pointer;
     outline: none;
+    margin-top: 5px;
     margin-left: 15px;
-    margin-top: -80px;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 2px;
     background-color: white;
 }
 .icon{
-    height: 17px;
-    width: 17px;
-    margin-top: -2px;
-    margin-left: -4px;
+    height: 15px;
+    width: 15px;
+    margin-top: -1px;
+    margin-left: -5px;
     color: darkslategray;
     background-color: white;
+}
+.text_a {
+    font-size: 17px;
+    height: 27px;
+    width: 300px;
+    border-radius: 5px;
+    outline: none;
+    border-style: groove;
+margin-top:15px;
 }

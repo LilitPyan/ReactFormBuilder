@@ -9,20 +9,21 @@ class Dropdown extends React.Component {
     this.state = {
       isDeleting: false,
       isEditing: false,
-      value: [],
-      visibility:false
-      }
+      options: [
+        {name:'a', value:'a'},
+        {name:'b', value:'b'},
+        {name:'c', value:'c'}
+        ],
+    }
   }
 
   handleChange = (ev) => {
-    let ne= ev.target.value;
     this.setState({
-      value: [
-        ...this.state.value,
-        ne
-      ],
-      visibility: true
-    });
+    })
+  };
+
+
+  handleSubmit = () => {
   };
 
   edit = (ev) => {
@@ -44,26 +45,32 @@ class Dropdown extends React.Component {
     return (
       <div className={style.dropdown}>
         {!this.state.isEditing ? (
-          <select className={style.title} value={this.state.option}>
-            <option>{this.state.value[0]}</option>
-            <option>{this.state.value[1]}</option>
-            <option>{this.state.value[2]}</option>
-            <option>{this.state.value[3]}</option>
-            <option>{this.state.value[4]}</option>
-            <option>{this.state.value[5]}</option>
-            <option>{this.state.value[6]}</option>
+          <select className={style.title}>
+            {this.state.options.map((option)=>{
+              return(
+                <option name={option.name}>{option.value}</option>
+              )
+            })
+            }
           </select>
         ) : (
-          <textarea
-            className={style.text_area}
-            onChange={this.handleChange}
-            value={this.state.value}
-          >
-             Header text...
-            </textarea>
+          <div className={style.edit_area}>
+            <input
+              className={style.drop_title}
+              placeholder='Dropdown title'
+              onChange={this.handleChange}
+              name='value'
+            />
+            <input
+              className={style.text_area}
+              placeholder='Dropdown option'
+              onChange={this.handleChange}
+              name='name'
+            />
+          </div>
         )}
         <button className={style.eButton}>
-          <FiEdit className={style.icon} onClick={this.edit}/>
+          <FiEdit className={style.icon} onClick={this.edit} onSubmit={this.handleSubmit}/>
         </button>
         <button className={style.dButton}>
           <MdDelete className={style.icon} onClick={this.deleted}/>

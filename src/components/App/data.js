@@ -9,7 +9,6 @@ import Image from "../Image/Image";
 import MultipleChoice from "../MultipleChoice/MultipleChoice";
 import TextInput from "../TextInput/TextInput";
 import NumberInput from "../NumberInput/NumberInput";
-import MultiLineInput from "../MultiLineInput/MultiLineInput";
 
 import {
   FaArrowsAltH,
@@ -19,7 +18,6 @@ import {
   FaParagraph,
   FaPlus,
   FaRegImage,
-  FaTextHeight
 } from 'react-icons/fa';
 import {FiCheckSquare} from 'react-icons/fi';
 import {MdRadioButtonChecked} from 'react-icons/md';
@@ -81,12 +79,6 @@ const ITEMS = [
   },
   {
     id: 10,
-    name: 'Multi-line Input',
-    icon: <FaTextHeight/>,
-    content: <MultiLineInput/>
-  },
-  {
-    id: 11,
     name: 'Image',
     icon: <FaRegImage/>,
     content: <Image/>
