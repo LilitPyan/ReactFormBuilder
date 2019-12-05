@@ -1,13 +1,13 @@
 import React from "react";
 import Popup from "reactjs-popup";
 import './FormPreview.css'
+import Item from "../Item/Item";
 
 class ControlledPopup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
-      isVisible: false
+      open: false
     };
   }
 
@@ -29,21 +29,14 @@ class ControlledPopup extends React.Component {
     return (
       <div className="popup">
         <button className="open_btn" onClick={this.openModal}>
-          Controlled Popup
+         Preview Form
         </button>
-        <Popup
-          open={this.state.open}
-          closeOnDocumentClick
-          onClose={this.closeModal}
-        >
+        <Popup open={this.state.open} closeOnDocumentClick onClose={this.closeModal}>
           <div className="modal">
             {data.map((item, id) => {
               return (
-                <div
-                  key={item.uniqueId}
-                  id={item.uniqueId}
-                >
-                  {item.content}
+                <div key={item.uniqueId} id={item.uniqueId}>
+                  <Item id={item.id} onDelete={() => this.deleteItem(item.uniqueId)} />
                 </div>
               )
             })}

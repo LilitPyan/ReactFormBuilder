@@ -1,17 +1,16 @@
-import './HeaderText.module.css';
 import React from 'react';
 import {FiEdit} from 'react-icons/fi';
 import {MdDelete} from 'react-icons/md';
-import style from './HeaderText.module.css';
+import style from './TextInput.module.css';
 
-class HeaderText extends React.Component {
+class TextInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isDeleting: false,
       isEditing: false,
       isVisible: false,
-      value: 'Header text...'
+      value: 'Text input...'
     }
   }
 
@@ -50,7 +49,7 @@ class HeaderText extends React.Component {
   render() {
     return (
       <div
-        className={style.header}
+        className={style.text_input}
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
@@ -65,16 +64,19 @@ class HeaderText extends React.Component {
         </>
         }
         {!this.state.isEditing ? (
-          <h3 className={style.title}>
-            {this.state.value}
-          </h3>
+          <div>
+            <p className={style.p}>
+              {this.state.value}
+            </p>
+            <input type='text' className={style.text_area} disabled/>
+          </div>
         ) : (
           <textarea
-            className={style.textarea}
+            className={style.text_a}
             onChange={this.handleChange}
             value={this.state.value}
           >
-             Header text...
+            Text input...
             </textarea>
         )}
       </div>
@@ -82,4 +84,4 @@ class HeaderText extends React.Component {
   }
 }
 
-export default HeaderText;
+export default TextInput;

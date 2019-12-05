@@ -1,4 +1,4 @@
-.label {
+.image{
     width: 580px;
     min-height: 50px;
     margin-top: 5px;
@@ -7,11 +7,35 @@
     cursor: move;
 }
 
-.label:hover {
+.image:hover {
     border: 3px solid darkslategray;
     border-radius: 5px;
 }
-
+.title{
+    font-size: 17px;
+    color: darkslategray;
+    font-weight: bolder;
+}
+.textarea{
+    height: 21px;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    width: 260px;
+    display: grid;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 2px solid darkslategray;
+    font-weight: bolder;
+    color: darkslategray;
+}
+.p{
+    margin-top: 10px;
+    font-size: 18px;
+    height: 15px;
+    width: 300px;
+    font-weight: normal;
+}
 .eButton {
     cursor: pointer;
     outline: none;
@@ -35,37 +59,11 @@
     border-radius: 2px;
     background-color: white;
 }
-
-.icon {
+.icon{
     height: 15px;
     width: 15px;
     margin-top: -1px;
     margin-left: -5px;
     color: darkslategray;
     background-color: white;
-}
-
-.title {
-    font-size: 18px;
-    height: 15px;
-    width: 300px;
-    color: darkslategray;
-    margin-top: 9px;
-    margin-bottom: 5px;
-    padding-left: 3px;
-    display: grid;
-}
-
-.textarea {
-    height: 21px;
-    margin-top: 9px;
-    margin-bottom: 5px;
-    padding-left: 15px;
-    width: 260px;
-    display: grid;
-    border-radius: 4px;
-    font-size: 14px;
-    border: 2px solid darkslategray;
-    font-weight: bolder;
-    color: darkslategray;
 }

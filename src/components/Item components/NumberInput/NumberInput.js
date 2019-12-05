@@ -1,20 +1,16 @@
 import React from 'react';
-import style from './MultipleChoice.module.css';
 import {FiEdit} from 'react-icons/fi';
 import {MdDelete} from 'react-icons/md';
+import style from './NumberInput.module.css';
 
-class MultipleChoice extends React.Component {
+class NumberInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isDeleting: false,
       isEditing: false,
       isVisible: false,
-      values: [
-        {value: 'Radio 1'},
-        {value: 'Radio 2'},
-        {value: 'Radio 3'}
-        ]
+      value: 'Number input...'
     }
   }
 
@@ -32,7 +28,7 @@ class MultipleChoice extends React.Component {
 
   handleChange = (ev) => {
     this.setState({
-      values:[{...this.state.values},{value: ev.target.value}]
+      value: ev.target.value
     });
   };
 
@@ -53,7 +49,7 @@ class MultipleChoice extends React.Component {
   render() {
     return (
       <div
-        className={style.multiple_choice}
+        className={style.number_input}
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
@@ -68,36 +64,24 @@ class MultipleChoice extends React.Component {
         </>
         }
         {!this.state.isEditing ? (
-          <form className={style.form}>
-            <label className={style.title}>Multiple choice..</label><br/>
-            {this.state.values.map((checkbox) => {
-              return (
-                <label className={style.label}>
-                  <input type='radio' disabled/>
-                  {checkbox.value}
-                </label>
-              )
-            })}
-            <br/>
-          </form>
-        ) : (
-          <div className={style.text_zone}>
-            {this.state.values.map((checkbox) => {
-              return (
-                <textarea
-                  className={style.textarea}
-                  onChange={this.handleChange}
-                  value={this.state.value}
-                >
-                 {checkbox.value}
-                </textarea>
-              )
-            })}
+          <div>
+            <p className={style.p}>
+              {this.state.value}
+            </p>
+            <input type='number' className={style.text_area} disabled/>
           </div>
+        ) : (
+          <textarea
+            className={style.text_a}
+            onChange={this.handleChange}
+            value={this.state.value}
+          >
+            Text input...
+            </textarea>
         )}
       </div>
     )
   }
 }
-export default MultipleChoice;
 
+export default NumberInput;

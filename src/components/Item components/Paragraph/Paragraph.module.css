@@ -1,0 +1,53 @@
+.item_container {
+    width: 590px;
+    height: 40px;
+    margin-top: 10px;
+    padding-left: 15px;
+    border: 2px solid white;
+    cursor: move;
+}
+
+.item_container:hover {
+    border: 2px solid lightsteelblue;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.item_container:hover .buttons {
+    visibility: visible;
+}
+
+.buttons {
+    float: right;
+    width: 70px;
+    height: 20px;
+    visibility: hidden;
+}
+
+.dButton {
+    cursor: pointer;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 30px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.icon {
+    height: 15px;
+    width: 15px;
+    margin-top: -1px;
+    margin-left: -5px;
+    color: darkslategray;
+    background-color: white;
+}
+
+.title {
+    height: 20px;
+    margin-top: -10px;
+    font-size: 15px;
+}
+
+

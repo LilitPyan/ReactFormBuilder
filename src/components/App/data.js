@@ -1,15 +1,4 @@
 import React from "react";
-import HeaderText from "../HeaderText/HeaderText";
-import Label from "../Label/Label";
-import Paragraph from "../Paragraph/Paragraph";
-import LineBreak from "../LineBreak/LineBreak";
-import Dropdown from "../Dropdown/Dropdown";
-import Checkbox from "../Checkbox/Checkbox";
-import Image from "../Image/Image";
-import MultipleChoice from "../MultipleChoice/MultipleChoice";
-import TextInput from "../TextInput/TextInput";
-import NumberInput from "../NumberInput/NumberInput";
-
 import {
   FaArrowsAltH,
   FaCaretSquareDown,
@@ -26,62 +15,52 @@ const ITEMS = [
   {
     id: 1,
     name: 'Header Text',
-    icon: <FaHeading/>,
-    content: <HeaderText/>
+    icon: <FaHeading />,
   },
   {
     id: 2,
     name: 'Label',
-    icon: <FaFont/>,
-    content: <Label/>
+    icon: <FaFont />,
   },
   {
     id: 3,
     name: 'Paragraph',
-    icon: <FaParagraph/>,
-    content: <Paragraph/>
+    icon: <FaParagraph />,
   },
   {
     id: 4,
     name: 'Line Break',
-    icon: <FaArrowsAltH/>,
-    content: <LineBreak/>
+    icon: <FaArrowsAltH />,
   },
   {
     id: 5,
     name: 'Dropdown',
-    icon: <FaCaretSquareDown/>,
-    content: <Dropdown/>
+    icon: <FaCaretSquareDown />,
   },
   {
     id: 6,
     name: 'Checkbox',
-    icon: <FiCheckSquare/>,
-    content: <Checkbox/>
+    icon: <FiCheckSquare />,
   },
   {
     id: 7,
     name: 'Multiple Choice',
-    icon: <MdRadioButtonChecked/>,
-    content: <MultipleChoice/>
+    icon: <MdRadioButtonChecked />,
   },
   {
     id: 8,
     name: 'Text Input',
-    icon: <FaFont/>,
-    content: <TextInput/>
+    icon: <FaFont />,
   },
   {
     id: 9,
     name: 'Number Input',
-    icon: <FaPlus/>,
-    content: <NumberInput/>
+    icon: <FaPlus />,
   },
   {
     id: 10,
     name: 'Image',
-    icon: <FaRegImage/>,
-    content: <Image/>
+    icon: <FaRegImage />,
   },
 ];
 

@@ -2,6 +2,7 @@ import React from 'react';
 import ITEMS from './data'
 import style from './App.module.css';
 import ControlledPopup from "../FormPreview/FormPreview";
+import Item from './../Item/Item'
 
 class App extends React.Component {
   constructor(props) {
@@ -85,7 +86,11 @@ class App extends React.Component {
             React Form Builder
           </span>
           <ControlledPopup dropItems={this.state.dropItems}/>
-          <ul className={style.drop_ul} onDrop={this.onDrop} onDragOver={this.allowDrop}>
+          <ul
+            className={style.drop_ul}
+            onDrop={this.onDrop}
+            onDragOver={this.allowDrop}
+          >
             {this.state.dropItems.map((item, index) => {
               return (
                 <li
@@ -99,7 +104,10 @@ class App extends React.Component {
                     onDragStart={e => this.onSortDragStart(e, index)}
                     onDragEnd={this.onSortDragEnd}
                   >
-                    {item.content}
+                    <Item
+                      id={item.id}
+                      onDelete={() => this.deleteItem(item.uniqueId)}
+                    />
                   </div>
                 </li>
               )
@@ -107,7 +115,9 @@ class App extends React.Component {
           </ul>
         </div>
         <div className={style.drag_zone}>
-          <span className={style.tool_title}>Toolbox</span>
+          <span className={style.tool_title}>
+            Toolbox
+          </span>
           <ul>
             {ITEMS.map((item) =>
               <li

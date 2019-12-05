@@ -1,20 +1,17 @@
 import React from 'react';
-import style from './Checkbox.module.css';
+import style from './Dropdown.module.css';
 import {FiEdit} from 'react-icons/fi';
 import {MdDelete} from 'react-icons/md';
 
-class Checkbox extends React.Component {
+class Dropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isDeleting: false,
       isEditing: false,
       isVisible: false,
-      values: [
-        {value: 'Option 1'},
-        {value: 'Option 2'},
-        {value: 'Option 3'}
-      ]
+      options: [],
+      option: {value: ''}
     }
   }
 
@@ -30,8 +27,11 @@ class Checkbox extends React.Component {
     })
   };
 
-  handleChange = (ev) => {
-    this.setState({});
+  handleChangeValue = (ev) => {
+    let n = ev.target.value;
+    this.setState({
+
+    })
   };
 
   edit = (ev) => {
@@ -51,7 +51,7 @@ class Checkbox extends React.Component {
   render() {
     return (
       <div
-        className={style.checkbox}
+        className={style.dropdown}
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
@@ -66,34 +66,24 @@ class Checkbox extends React.Component {
         </>
         }
         {!this.state.isEditing ? (
-          <form className={style.form}>
-            <label className={style.title}>
-              Checkbox...
-            </label>
-            <br/>
-            {this.state.values.map((checkbox) => {
+          <select className={style.select}>
+            {this.state.options.map((option) => {
               return (
-                <label className={style.label}>
-                  <input type='checkbox' disabled/>
-                  {checkbox.value}
-                </label>
+                <option name={option.name}>
+                  {option.value}
+                </option>
               )
             })}
-            <br/>
-          </form>
+          </select>
         ) : (
-          <div className={style.text_zone}>
-            {this.state.values.map((checkbox) => {
-              return (
-                <textarea
-                  className={style.textarea}
-                  onChange={this.handleChange}
-                  value={this.state.value}
-                >
-                 {checkbox.value}
-                </textarea>
-              )
-            })}
+          <div className={style.edit_area}>
+            <input
+              className={style.text_area}
+              placeholder='Dropdown option'
+              onChange={this.handleChangeValue}
+              value={this.state.option.value}
+              name='value'
+            />
           </div>
         )}
       </div>
@@ -101,5 +91,6 @@ class Checkbox extends React.Component {
   }
 }
 
-export default Checkbox;
+export default Dropdown;
+
 

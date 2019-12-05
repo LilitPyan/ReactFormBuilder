@@ -1,17 +1,32 @@
-.paragraph {
+.text_input {
     width: 580px;
-    min-height: 50px;
+    min-height: 80px;
     margin-top: 5px;
     padding-left: 25px;
     border: 3px solid white;
     cursor: move;
 }
 
-.paragraph:hover {
+.text_input:hover {
     border: 3px solid darkslategray;
     border-radius: 5px;
 }
-
+.p{
+    margin-top: 10px;
+    font-size: 18px;
+    height: 15px;
+    width: 300px;
+    font-weight: normal;
+    color:darkslategray;
+}
+.text_area {
+    font-size: 17px;
+    height: 21px;
+    width: 260px;
+    border-radius: 5px;
+    outline: none;
+    border-style: groove;
+}
 .eButton {
     cursor: pointer;
     outline: none;
@@ -35,8 +50,7 @@
     border-radius: 2px;
     background-color: white;
 }
-
-.icon {
+.icon{
     height: 15px;
     width: 15px;
     margin-top: -1px;
@@ -44,25 +58,15 @@
     color: darkslategray;
     background-color: white;
 }
-
-.title {
-    margin-bottom: -13px;
-    margin-top: 15px;
-    font-size: 18px;
-    height: 15px;
-    width: 300px;
-    color: darkslategray;
-}
-
-.textarea {
-    height: 21px;
-    margin-top: 9px;
+.text_a {
+    height: 30px;
+    margin-top: 20px;
     margin-bottom: 5px;
     padding-left: 15px;
     width: 260px;
     display: grid;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     border: 2px solid darkslategray;
     font-weight: bolder;
     color: darkslategray;
