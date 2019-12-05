@@ -57,6 +57,16 @@ class MultipleChoice extends React.Component {
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
+        {this.state.isVisible &&
+        <>
+          <button className={style.eButton}>
+            <FiEdit className={style.icon} onClick={this.edit}/>
+          </button>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
+        </>
+        }
         {!this.state.isEditing ? (
           <form className={style.form}>
             <label className={style.title}>Multiple choice..</label><br/>
@@ -71,11 +81,11 @@ class MultipleChoice extends React.Component {
             <br/>
           </form>
         ) : (
-          <div>
+          <div className={style.text_zone}>
             {this.state.values.map((checkbox) => {
               return (
                 <textarea
-                  className={style.box}
+                  className={style.textarea}
                   onChange={this.handleChange}
                   value={this.state.value}
                 >
@@ -85,16 +95,6 @@ class MultipleChoice extends React.Component {
             })}
           </div>
         )}
-        {this.state.isVisible &&
-        <>
-          <button className={style.eButton}>
-            <FiEdit className={style.icon} onClick={this.edit}/>
-          </button>
-          <button className={style.dButton}>
-            <MdDelete className={style.icon} onClick={this.deleted}/>
-          </button>
-        </>
-        }
       </div>
     )
   }

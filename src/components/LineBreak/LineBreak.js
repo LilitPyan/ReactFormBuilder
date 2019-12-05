@@ -29,7 +29,6 @@ class LineBreak extends React.Component {
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
-        <p className={style.line}/>
         {this.state.isVisible &&
         <>
           <button className={style.dButton}>
@@ -37,6 +36,7 @@ class LineBreak extends React.Component {
           </button>
         </>
         }
+        <p className={style.line}/>
       </div>
     )
   }

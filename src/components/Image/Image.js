@@ -52,17 +52,6 @@ class Image extends React.Component {
             onMouseOver={this.mouseOver}
             onMouseLeave={this.mouseLeave}
           >
-              {!this.state.isEditing ? (
-                <input type='image' className={style.text_area} disabled/>
-              ):(
-                <textarea
-                  className={style.text_area}
-                  onChange={this.handleChange}
-                  value={this.state.value}
-                >
-            Paragraph...
-            </textarea>
-              )}
               {this.state.isVisible &&
               <>
                   <button className={style.eButton}>
@@ -73,6 +62,17 @@ class Image extends React.Component {
                   </button>
               </>
               }
+              {!this.state.isEditing ? (
+                <input type='image' className={style.p} disabled/>
+              ):(
+                <textarea
+                  className={style.textarea}
+                  onChange={this.handleChange}
+                  value={this.state.value}
+                >
+            Paragraph...
+            </textarea>
+              )}
           </div>
         )
     }

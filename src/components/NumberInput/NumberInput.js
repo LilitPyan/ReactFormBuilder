@@ -53,6 +53,16 @@ class NumberInput extends React.Component {
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
+        {this.state.isVisible &&
+        <>
+          <button className={style.eButton}>
+            <FiEdit className={style.icon} onClick={this.edit}/>
+          </button>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
+        </>
+        }
         {!this.state.isEditing ? (
           <div>
             <p className={style.p}>
@@ -69,16 +79,6 @@ class NumberInput extends React.Component {
             Text input...
             </textarea>
         )}
-        {this.state.isVisible &&
-        <>
-          <button className={style.eButton}>
-            <FiEdit className={style.icon} onClick={this.edit}/>
-          </button>
-          <button className={style.dButton}>
-            <MdDelete className={style.icon} onClick={this.deleted}/>
-          </button>
-        </>
-        }
       </div>
     )
   }

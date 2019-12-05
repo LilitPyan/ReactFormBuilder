@@ -54,19 +54,6 @@ class Label extends React.Component {
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
-        {!this.state.isEditing ? (
-          <label className={style.title}>
-            {this.state.value}
-          </label>
-        ):(
-          <textarea
-            className={style.text_area}
-            onChange={this.handleChange}
-            value={this.state.value}
-          >
-             Label...
-            </textarea>
-        )}
         {this.state.isVisible &&
         <>
           <button className={style.eButton}>
@@ -77,6 +64,19 @@ class Label extends React.Component {
           </button>
         </>
         }
+        {!this.state.isEditing ? (
+          <label className={style.title}>
+            {this.state.value}
+          </label>
+        ):(
+          <textarea
+            className={style.textarea}
+            onChange={this.handleChange}
+            value={this.state.value}
+          >
+             Label...
+            </textarea>
+        )}
       </div>
     )
   }

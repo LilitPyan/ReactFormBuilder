@@ -53,19 +53,6 @@ class Paragraph extends React.Component {
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
-        {!this.state.isEditing ? (
-          <p className={style.title}>
-            {this.state.value}
-          </p>
-        ):(
-          <textarea
-            className={style.text_area}
-            onChange={this.handleChange}
-            value={this.state.value}
-          >
-            Paragraph...
-            </textarea>
-        )}
         {this.state.isVisible &&
         <>
           <button className={style.eButton}>
@@ -76,6 +63,19 @@ class Paragraph extends React.Component {
           </button>
         </>
         }
+        {!this.state.isEditing ? (
+          <p className={style.title}>
+            {this.state.value}
+          </p>
+        ):(
+          <textarea
+            className={style.textarea}
+            onChange={this.handleChange}
+            value={this.state.value}
+          >
+            Paragraph...
+            </textarea>
+        )}
       </div>
     )
   }

@@ -54,19 +54,6 @@ class HeaderText extends React.Component {
         onMouseOver={this.mouseOver}
         onMouseLeave={this.mouseLeave}
       >
-        {!this.state.isEditing ? (
-          <h3 className={style.title}>
-            {this.state.value}
-          </h3>
-        ) : (
-          <textarea
-            className={style.text_area}
-            onChange={this.handleChange}
-            value={this.state.value}
-          >
-             Header text...
-            </textarea>
-        )}
         {this.state.isVisible &&
         <>
           <button className={style.eButton}>
@@ -77,6 +64,19 @@ class HeaderText extends React.Component {
           </button>
         </>
         }
+        {!this.state.isEditing ? (
+          <h3 className={style.title}>
+            {this.state.value}
+          </h3>
+        ) : (
+          <textarea
+            className={style.textarea}
+            onChange={this.handleChange}
+            value={this.state.value}
+          >
+             Header text...
+            </textarea>
+        )}
       </div>
     )
   }

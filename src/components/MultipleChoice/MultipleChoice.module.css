@@ -1,77 +1,42 @@
-.multiple_choice{
-    width: 560px;
-    height: 100px;
+.multiple_choice {
+    width: 580px;
+    min-height: 120px;
     margin-top: 15px;
     padding-left: 25px;
-    display: flex;
+    border: 3px solid white;
     cursor: move;
-    background-color: white;
-    border-style: groove;
 }
+
 .multiple_choice:hover {
-    border-radius: 10px;
-    background-color: lightsteelblue;
-}
-.box{
-    margin-top: 5px;
-    height: 17px;
-    width: 285px;
-    display: grid;
-}
-p{
-    margin-top: 5px;
-    font-size: 15px;
-    height: 15px;
-    width: 300px;
-    color: darkslategray;
-}
-.form{
-    min-height: 80px;
-    width: 290px;
-    display: grid;
-}
-.title{
-    margin-bottom: -13px;
-    font-size: 18px;
-    height: 15px;
-    width: 300px;
-    color: darkslategray;
-}
-.label {
-    margin-top: 10px;
-    font-size: 15px;
-    height: 10px;
-    width: 290px;
-}
-.text_area {
-    font-size: 17px;
-    height: 27px;
-    width: 300px;
+    border: 3px solid darkslategray;
     border-radius: 5px;
-    outline: none;
-    border-style: groove;
 }
+
 .eButton {
     cursor: pointer;
     outline: none;
     margin-top: 5px;
-    margin-left: 200px;
+    margin-right: 40px;
+    float: right;
     width: 20px;
     height: 20px;
     border-radius: 2px;
     background-color: white;
 }
+
 .dButton {
     cursor: pointer;
     outline: none;
     margin-top: 5px;
-    margin-left: 15px;
+    margin-right: -50px;
+    float: right;
     width: 20px;
     height: 20px;
     border-radius: 2px;
     background-color: white;
 }
-.icon{
+
+.icon {
     height: 15px;
     width: 15px;
     margin-top: -1px;
@@ -79,12 +44,51 @@ p{
     color: darkslategray;
     background-color: white;
 }
-.text_a {
-    font-size: 17px;
-    height: 27px;
+
+.form {
+    min-height: 80px;
+    width: 290px;
+    display: grid;
+}
+
+.title {
+    margin-bottom: -13px;
+    margin-top: 5px;
+    font-size: 18px;
+    height: 15px;
     width: 300px;
-    border-radius: 5px;
-    outline: none;
-    border-style: groove;
-    margin-top:15px;
+    color: darkslategray;
+}
+
+.label {
+    margin-top: 11px;
+    padding-top: 6px;
+    font-size: 15px;
+    height: 10px;
+    width: 290px;
+}
+
+input {
+    margin-right: 15px;
+}
+
+.text_zone{
+    min-height: 125px;
+    margin-top: 1px;
+    width: 310px;
+    display: grid;
+}
+
+.textarea {
+    height: 21px;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    width: 260px;
+    display: grid;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 2px solid darkslategray;
+    font-weight: bolder;
+    color: darkslategray;
 }

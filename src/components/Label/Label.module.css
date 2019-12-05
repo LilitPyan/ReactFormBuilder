@@ -1,59 +1,71 @@
 .label {
     width: 580px;
-    height: 50px;
-    margin-top: 15px;
+    min-height: 50px;
+    margin-top: 5px;
     padding-left: 25px;
-    display: flex;
+    border: 3px solid white;
     cursor: move;
 }
+
 .label:hover {
-    border-radius: 10px;
-    border-style: groove;
-}
-.title{
-    margin-top: 15px;
-    height: 15px;
-    width: 300px;
-    font-size: 17px;
-}
-label{
-    font-weight: bolder;
-    color: darkslategray;
-}
-.text_area{
-    margin-top: 5px;
-    font-size: 17px;
-    height: 30px;
-    width: 290px;
+    border: 3px solid darkslategray;
     border-radius: 5px;
-    outline: none;
-    border-style: groove;
 }
+
 .eButton {
     cursor: pointer;
     outline: none;
     margin-top: 5px;
-    margin-left: 200px;
+    margin-right: 40px;
+    float: right;
     width: 20px;
     height: 20px;
     border-radius: 2px;
     background-color: white;
 }
+
 .dButton {
     cursor: pointer;
     outline: none;
     margin-top: 5px;
-    margin-left: 15px;
+    margin-right: -50px;
+    float: right;
     width: 20px;
     height: 20px;
     border-radius: 2px;
     background-color: white;
 }
-.icon{
+
+.icon {
     height: 15px;
     width: 15px;
     margin-top: -1px;
     margin-left: -5px;
     color: darkslategray;
     background-color: white;
+}
+
+.title {
+    font-size: 18px;
+    height: 15px;
+    width: 300px;
+    color: darkslategray;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    padding-left: 3px;
+    display: grid;
+}
+
+.textarea {
+    height: 21px;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    width: 260px;
+    display: grid;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 2px solid darkslategray;
+    font-weight: bolder;
+    color: darkslategray;
 }
