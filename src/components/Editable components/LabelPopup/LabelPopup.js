@@ -1,6 +1,6 @@
 import React from 'react';
 import {FiEdit} from 'react-icons/fi';
-import style from './Label.modulePopup.css';
+import style from './LabelPopup.module.css';
 import Popup from "reactjs-popup";
 
 class LabelPopup extends React.Component {
@@ -48,5 +48,4 @@ class LabelPopup extends React.Component {
     )
   }
 }
-
 export default LabelPopup;

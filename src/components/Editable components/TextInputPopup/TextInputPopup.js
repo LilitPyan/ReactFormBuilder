@@ -1,9 +1,9 @@
 import React from 'react';
 import {FiEdit} from 'react-icons/fi';
-import style from './NumberInput.module.css';
+import style from './TextInputPopup.module.css';
 import Popup from "reactjs-popup";
 
-class NumberInputPopup extends React.Component {
+class TextInputPopup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,4 +48,4 @@ class NumberInputPopup extends React.Component {
     )
   }
 }
-export default NumberInputPopup;
+export default TextInputPopup;

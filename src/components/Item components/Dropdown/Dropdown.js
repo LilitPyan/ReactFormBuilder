@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Dropdown.module.css';
-import {FiEdit} from 'react-icons/fi';
 import {MdDelete} from 'react-icons/md';
+import DropdownPopup from "../../Editable components/DropdownPopup/DropdownPopup";
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -50,42 +50,21 @@ class Dropdown extends React.Component {
 
   render() {
     return (
-      <div
-        className={style.dropdown}
-        onMouseOver={this.mouseOver}
-        onMouseLeave={this.mouseLeave}
-      >
-        {this.state.isVisible &&
-        <>
-          <button className={style.eButton}>
-            <FiEdit className={style.icon} onClick={this.edit}/>
-          </button>
+      <div className={style.item_container}>
+        <div className={style.buttons}>
+          <DropdownPopup />
           <button className={style.dButton}>
             <MdDelete className={style.icon} onClick={this.deleted}/>
           </button>
-        </>
-        }
-        {!this.state.isEditing ? (
-          <select className={style.select}>
-            {this.state.options.map((option) => {
-              return (
-                <option name={option.name}>
-                  {option.value}
-                </option>
-              )
-            })}
+        </div>
+        <div className={style.title}>
+          <h5>
+            Select name...
+          </h5>
+          <select className={style.select} disabled>
+            <option></option>
           </select>
-        ) : (
-          <div className={style.edit_area}>
-            <input
-              className={style.text_area}
-              placeholder='Dropdown option'
-              onChange={this.handleChangeValue}
-              value={this.state.option.value}
-              name='value'
-            />
-          </div>
-        )}
+        </div>
       </div>
     )
   }
