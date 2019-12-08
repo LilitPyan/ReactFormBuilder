@@ -1,9 +1,9 @@
 import React from "react";
 import Popup from "reactjs-popup";
 import './FormPreview.css'
-import Item from "../Item/Item";
+import FormItems from "../Form components/FormItems";
 
-class ControlledPopup extends React.Component {
+class FormPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,23 +29,21 @@ class ControlledPopup extends React.Component {
     return (
       <div className="popup">
         <button className="open_btn" onClick={this.openModal}>
-         Preview Form
+          Preview Form
         </button>
         <Popup open={this.state.open} closeOnDocumentClick onClose={this.closeModal}>
           <div className="modal">
-            {data.map((item, id) => {
-              return (
-                <div key={item.uniqueId} id={item.uniqueId}>
-                  <Item id={item.id} onDelete={() => this.deleteItem(item.uniqueId)} />
-                </div>
-              )
-            })}
-            <button className="save_btn">
-              Save
-            </button>
-            <button className="close_btn" onClick={this.closeModal}>
-              Close
-            </button>
+            <form>
+            {data.map(item => <FormItems id={item.id}/>)}
+            </form>
+            <div className="buttons">
+              <button className="save_btn">
+                Save
+              </button>
+              <button className="close_btn" onClick={this.closeModal}>
+                Close
+              </button>
+            </div>
           </div>
         </Popup>
       </div>
@@ -53,4 +51,4 @@ class ControlledPopup extends React.Component {
   }
 }
 
-export default ControlledPopup;
+export default FormPreview;

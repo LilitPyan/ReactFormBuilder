@@ -19,6 +19,7 @@
 
 .buttons {
     float: right;
+    margin-right: 20px;
     width: 70px;
     height: 20px;
     visibility: hidden;
@@ -29,18 +30,20 @@
     outline: none;
     width: 20px;
     height: 20px;
-    margin-right: 10px;
-    margin-top: 30px;
+    margin-top: -20px;
+    margin-left: 53px;
     border-radius: 2px;
     background-color: white;
+    display: grid;
 }
 
-.image{
+.image {
     padding-top: 5px;
     padding-left: 20px;
     height: 85px;
     width: 85px;
 }
+
 .icon {
     height: 15px;
     width: 15px;

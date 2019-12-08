@@ -6,47 +6,8 @@ import DropdownPopup from "../../Editable components/DropdownPopup/DropdownPopup
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isDeleting: false,
-      isEditing: false,
-      isVisible: false,
-      options: [],
-      option: {value: ''}
-    }
+    this.state = {}
   }
-
-  mouseOver = () => {
-    this.setState({
-      isVisible: true
-    })
-  };
-
-  mouseLeave = () => {
-    this.setState({
-      isVisible: false
-    })
-  };
-
-  handleChangeValue = (ev) => {
-    let n = ev.target.value;
-    this.setState({
-
-    })
-  };
-
-  edit = (ev) => {
-    ev.preventDefault();
-    this.setState(prevState => ({
-      isEditing: !prevState.isEditing,
-    }));
-  };
-
-  deleted = (ev) => {
-    ev.preventDefault();
-    this.setState({
-      isDeleting: true
-    });
-  };
 
   render() {
     return (
@@ -54,7 +15,7 @@ class Dropdown extends React.Component {
         <div className={style.buttons}>
           <DropdownPopup />
           <button className={style.dButton}>
-            <MdDelete className={style.icon} onClick={this.deleted}/>
+            <MdDelete className={style.icon}/>
           </button>
         </div>
         <div className={style.title}>

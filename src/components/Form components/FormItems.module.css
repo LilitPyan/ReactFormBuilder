@@ -1,0 +1,28 @@
+.form_header {
+    height: 24px;
+    font-size: 20px;
+}
+
+.form_label {
+    height: 20px;
+    font-size: 16px;
+}
+
+.form_paragraph {
+    height: 16px;
+    font-size: 12px;
+}
+
+.form_select {
+    width: 250px;
+    outline: none;
+    height: 40px;
+    border-radius: 3px;
+}
+
+.form_checkbox{}
+.form_multipleChoice{}
+.form_textInput{}
+.form_numberInput{}
+.form_image{}
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import ITEMS from './data'
 import style from './App.module.css';
-import ControlledPopup from "../FormPreview/FormPreview";
+import FormPreview from "../FormPreview/FormPreview";
 import Item from './../Item/Item'
 
 class App extends React.Component {
@@ -72,9 +72,9 @@ class App extends React.Component {
     this.ordering = false;
   };
 
-  deleteItem = (id) => {
+  deleteItem = (uniqueId) => {
     this.setState(prevState => {
-      dropItems: prevState.dropItems.filter(item => item.id !== id);
+      dropItems: prevState.dropItems.filter(item => item.id !== uniqueId);
     })
   };
 
@@ -85,7 +85,7 @@ class App extends React.Component {
           <span className={style.form_title}>
             React Form Builder
           </span>
-          <ControlledPopup dropItems={this.state.dropItems}/>
+          <FormPreview dropItems={this.state.dropItems}/>
           <ul
             className={style.drop_ul}
             onDrop={this.onDrop}
@@ -105,6 +105,7 @@ class App extends React.Component {
                     onDragEnd={this.onSortDragEnd}
                   >
                     <Item
+                      dropItems={this.state.dropItems}
                       id={item.id}
                       onDelete={() => this.deleteItem(item.uniqueId)}
                     />

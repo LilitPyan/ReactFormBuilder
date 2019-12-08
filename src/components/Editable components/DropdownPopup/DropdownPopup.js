@@ -1,5 +1,5 @@
 import React from 'react';
-import {FiEdit} from 'react-icons/fi';
+import { FiEdit, FiPlusCircle, FiMinusCircle} from 'react-icons/fi';
 import style from './DropdownPopup.module.css';
 import Popup from "reactjs-popup";
 
@@ -8,7 +8,7 @@ class DropdownPopup extends React.Component {
     super(props);
     this.state = {
       values: [],
-      value:{},
+      value: {},
       open: false
     };
   }
@@ -31,16 +31,36 @@ class DropdownPopup extends React.Component {
 
 
   render() {
-    const { value, values, open }=this.state;
+    const {value, values, open} = this.state;
     return (
-      <div className="popup">
+      <div className={style.popup}>
         <button className={style.eButton} onClick={this.openModal}>
           <FiEdit className={style.icon} onClick={this.edit}/>
         </button>
         <Popup open={open} closeOnDocumentClick onClose={this.closeModal}>
-          <div className={style.text_zone}>
-            <textarea className={style.textarea} onChange={this.handleChange}/>
-            <button className="close_btn" onClick={this.closeModal}>Close</button>
+          <div className={style.modal}>
+
+            <label>Options</label>
+            <input className={style.option} onChange={this.handleChange}/>
+            <input className={style.option} onChange={this.handleChange}/>
+            <input className={style.option} onChange={this.handleChange}/>
+
+            <label>Values</label>
+            <input className={style.value} onChange={this.handleChange}/>
+            <input className={style.value} onChange={this.handleChange}/>
+            <input className={style.value} onChange={this.handleChange}/>
+
+            <button className={style.eButton} onClick={this.openModal}>
+              <FiPlusCircle className={style.icon}/>
+            </button>
+            <button className={style.eButton} onClick={this.openModal}>
+              <FiMinusCircle className={style.icon}/>
+            </button>
+
+
+            <button className={style.cButton} onClick={this.closeModal}>
+              Close
+            </button>
           </div>
         </Popup>
       </div>
@@ -48,4 +68,5 @@ class DropdownPopup extends React.Component {
     )
   }
 }
+
 export default DropdownPopup;

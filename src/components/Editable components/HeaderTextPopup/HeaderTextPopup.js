@@ -9,10 +9,9 @@ class HeaderTextPopup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      values: [],
-      value:{},
-      open: false
-    };
+      open: false,
+      value: ''
+    }
   }
 
   openModal = () => {
@@ -23,26 +22,44 @@ class HeaderTextPopup extends React.Component {
 
   closeModal = () => {
     this.setState({
-      open: false
-    })
+      open: false,
+    });
   };
 
   handleChange = (ev) => {
-    this.setState({});
+    this.setState({
+      value: ev.target.value
+    });
   };
 
 
   render() {
-    const { value, values, open }=this.state;
+    const { value, open } = this.state;
+    const data = this.props.value;
+
+
     return (
-      <div className="popup">
+      <div className={style.popup}>
         <button className={style.eButton} onClick={this.openModal}>
-          <FiEdit className={style.icon} onClick={this.edit}/>
+          <FiEdit className={style.icon}/>
         </button>
-        <Popup open={open} closeOnDocumentClick onClose={this.closeModal}>
-          <div className={style.text_zone}>
-            <textarea className={style.textarea} onChange={this.handleChange}/>
-            <button className="close_btn" onClick={this.closeModal}>Close</button>
+        <Popup
+          open={open}
+          closeOnDocumentClick
+          onClose={this.closeModal}
+        >
+          <div className={style.modal}>
+            <input
+              className={style.textarea}
+              value={value}
+              onChange={this.handleChange}
+            />
+            <button
+              className={style.cButton}
+              onClick={this.closeModal}
+            >
+              Close
+            </button>
           </div>
         </Popup>
       </div>

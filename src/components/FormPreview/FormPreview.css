@@ -1,27 +1,41 @@
 .popup {
     margin-top: -25px;
+    margin-left: 20px;
     border-radius: 5px;
 }
+
 .modal {
-    margin-left: 35px;
+    min-height: 500px;
+    border-style: ridge;
+    background-color: whitesmoke;
+    padding-top: -25px;
+    padding-left: 25px;
 }
+
+.buttons{
+    float: right;
+    margin-top: 435px;
+}
+
 .open_btn {
     height: 25px;
+    width: 100px;
     background-color: darkslategray;
     color: white;
     margin-left: 580px;
     outline: none;
 }
+
 .save_btn {
     height: 25px;
     width: 70px;
     cursor: pointer;
     outline: none;
-    margin: 10px 20px 0 450px;
     border-radius: 5px;
     background-color: darkslategray;
     color: white;
 }
+
 .close_btn {
     height: 25px;
     width: 70px;
@@ -30,4 +44,6 @@
     border-radius: 5px;
     background-color: darkslategray;
     color: white;
+    margin-left: 20px;
+    margin-right: 10px;
 }

@@ -10,7 +10,7 @@ import MultipleChoice from "../Item components/MultipleChoice/MultipleChoice";
 import TextInput from "../Item components/TextInput/TextInput";
 import NumberInput from "../Item components/NumberInput/NumberInput";
 
-function Item({ id, onDelete }) {
+function Item({ id }) {
   switch (id) {
     case 1:
       return <HeaderText />;
