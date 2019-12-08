@@ -40,8 +40,10 @@
 .image {
     padding-top: 5px;
     padding-left: 20px;
-    height: 85px;
-    width: 85px;
+    height: 83px;
+    width: 83px;
+    border-radius: 3px;
+    font-family: Verdana;
 }
 
 .icon {

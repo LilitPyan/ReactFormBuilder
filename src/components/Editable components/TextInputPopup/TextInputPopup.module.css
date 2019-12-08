@@ -1,16 +1,50 @@
+.popup{
+    margin-top: -25px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.modal {
+    height: 50px;
+    width: 643px;
+    border-style: ridge;
+    background-color: lightsteelblue;;
+    padding-top: -25px;
+    padding-left: 25px;
+    display: inline-block;
+}
+
+.textarea {
+    height: 24px;
+    width: 300px;
+    border-radius: 3px;
+    margin-top: 11px;
+    outline: none;
+}
+
+.cButton {
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 2px;
+    background-color: white;
+    display: grid;
+    margin-left: 480px;
+    margin-top: -15px;
+}
 
 .eButton {
     cursor: pointer;
     outline: none;
     width: 20px;
     height: 20px;
-    float: left;
-    margin-right: 10px;
     margin-top: 30px;
     border-radius: 2px;
     background-color: white;
     display: grid;
 }
+
 .icon {
     height: 15px;
     width: 15px;

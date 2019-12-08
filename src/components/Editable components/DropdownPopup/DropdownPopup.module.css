@@ -2,10 +2,11 @@
     margin-top: -25px;
     margin-left: 20px;
     border-radius: 5px;
+    width: 643px;
 }
 
 .modal {
-    min-height: 100px;
+    min-height: 180px;
     width: 643px;
     border-style: ridge;
     background-color: lightsteelblue;;
@@ -14,20 +15,21 @@
     display: inline-block;
 }
 
-label{
+label {
     font-size: 15px;
     font-weight: bolder;
 }
-.option_name{
-    float: left;
-}
-.option_value{
-    float: right;
+
+.buttons {
+    height: 50px;
+    width: 80px;
+    display: flex;
+    margin-top: -15px;
 }
 
 .option{
     height: 18px;
-    width: 150px;
+    width: 200px;
     border-radius: 3px;
     margin-top: 11px;
     outline: none;
@@ -50,7 +52,7 @@ label{
     background-color: white;
     display: grid;
     margin-left: 480px;
-    margin-top: -15px;
+    margin-top: 5px;
 }
 
 .eButton {
@@ -64,6 +66,22 @@ label{
     display: grid;
 }
 
+.plus_icon {
+    height: 18px;
+    width: 18px;
+    margin-top: -1px;
+    margin-left: -5px;
+    background-color: yellowgreen;
+}
+
+.minus_icon {
+    height: 18px;
+    width: 18px;
+    margin-top: -1px;
+    margin-left: -5px;
+    background-color: lightslategray;
+}
+
 .icon {
     height: 15px;
     width: 15px;
@@ -71,4 +89,26 @@ label{
     margin-left: -5px;
     color: darkslategray;
     background-color: white;
+}
+
+.plus_btn {
+    cursor: pointer;
+    outline: none;
+    width: 23px;
+    height: 23px;
+    margin-top: 28px;
+    border-radius: 2px;
+    background-color: white;
+    display: grid;
+}
+
+.minus_btn {
+    cursor: pointer;
+    outline: none;
+    width: 23px;
+    height: 23px;
+    margin-top: 28px;
+    border-radius: 2px;
+    background-color: white;
+    margin-left: 8px;
 }
