@@ -1,17 +1,18 @@
 import './HeaderTextPopup.module.css';
 import React from 'react';
 import {FiEdit} from 'react-icons/fi';
-import style from './HeaderTextPopup.module.css';
 import Popup from "reactjs-popup";
+
+import style from './HeaderTextPopup.module.css';
 
 class HeaderTextPopup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       open: false,
-      textD: 'Header text...'
+      text: 'Header text...'
     }
-  }
+  };
 
   openModal = () => {
     this.setState({
@@ -23,21 +24,18 @@ class HeaderTextPopup extends React.Component {
     this.setState({
       open: false
     });
-    const listInfo = this.state.textD;
+    const listInfo = this.state.text;
     this.props.callbackFromParent(listInfo);
-    };
+  };
 
   handleChange = (ev) => {
     this.setState({
-      textD: ev.target.value
+      text: ev.target.value
     });
   };
 
-
-
   render() {
-    const {textD, open } = this.state;
-    console.log(textD);
+    const {text, open} = this.state;
 
     return (
       <div className={style.popup}>
@@ -46,7 +44,7 @@ class HeaderTextPopup extends React.Component {
         </button>
         <Popup open={open} onClose={this.closeModal}>
           <div className={style.modal}>
-            <input className={style.textarea} value={textD} onChange={this.handleChange}/>
+            <input className={style.textarea} value={text} onChange={this.handleChange}/>
             <button className={style.cButton} onClick={this.closeModal}>
               Close
             </button>

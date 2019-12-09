@@ -22,7 +22,9 @@ class ImagePopup extends React.Component {
     closeModal = () => {
         this.setState({
             open: false
-        })
+        });
+        const listInfo = this.state.values;
+        this.props.callbackFromParent(listInfo);
     };
 
     handleChange = (ev) => {

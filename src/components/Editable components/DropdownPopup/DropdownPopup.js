@@ -30,7 +30,9 @@ class DropdownPopup extends React.Component {
   closeModal = () => {
     this.setState({
       open: false
-    })
+    });
+    const listInfo = this.state.options;
+    this.props.callbackFromParent(listInfo);
   };
 
   handleChange = ({target:{name,value}}) => {
