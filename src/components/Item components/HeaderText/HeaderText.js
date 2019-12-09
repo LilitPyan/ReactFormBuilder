@@ -8,24 +8,31 @@ import HeaderTextPopup from "../../Editable components/HeaderTextPopup/HeaderTex
     constructor(props) {
       super(props);
       this.state = {
-       value:'Header text...'
+          listDataFromChild: ''
       }
     }
 
+    myCallback = (listInfo) => {
+      this.setState({ listDataFromChild: listInfo });
+    };
+
+
     render(){
-      const value = this.state.value;
+      const {listDataFromChild}= this.state;
+      console.log(listDataFromChild);
+
 
       return (
         <div className={style.item_container}>
           <div className={style.buttons}>
-            <HeaderTextPopup  value={this.state.value}/>
+            <HeaderTextPopup callbackFromParent={this.myCallback}/>
             <button className={style.dButton}>
               <MdDelete className={style.icon}/>
             </button>
           </div>
           <div className={style.title}>
             <h4>
-              {value}
+              {listDataFromChild}
             </h4>
           </div>
         </div>

@@ -73,7 +73,7 @@ class App extends React.Component {
   };
 
   deleteItem = (uniqueId) => {
-    let d= this.state.dropItems.filter(item => item.id !== uniqueId);
+    let d = this.state.dropItems.filter(item => item.id !== uniqueId);
     this.setState( {
       dropItems: d
     })
