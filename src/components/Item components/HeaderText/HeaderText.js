@@ -8,22 +8,24 @@ import HeaderTextPopup from "../../Editable components/HeaderTextPopup/HeaderTex
     constructor(props) {
       super(props);
       this.state = {
-        value: 'Header Text...',
+       value:'Header text...'
       }
     }
 
     render(){
+      const value = this.state.value;
+
       return (
         <div className={style.item_container}>
           <div className={style.buttons}>
-            <HeaderTextPopup value={this.state.value}/>
+            <HeaderTextPopup  value={this.state.value}/>
             <button className={style.dButton}>
               <MdDelete className={style.icon}/>
             </button>
           </div>
           <div className={style.title}>
             <h4>
-              {this.state.value}
+              {value}
             </h4>
           </div>
         </div>

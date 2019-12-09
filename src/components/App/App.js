@@ -73,8 +73,9 @@ class App extends React.Component {
   };
 
   deleteItem = (uniqueId) => {
-    this.setState(prevState => {
-      dropItems: prevState.dropItems.filter(item => item.id !== uniqueId);
+    let d= this.state.dropItems.filter(item => item.id !== uniqueId);
+    this.setState( {
+      dropItems: d
     })
   };
 
@@ -106,8 +107,9 @@ class App extends React.Component {
                   >
                     <Item
                       dropItems={this.state.dropItems}
+                      data={this.props.data}
                       id={item.id}
-                      onDelete={() => this.deleteItem(item.uniqueId)}
+                      onDelete={this.deleteItem}
                     />
                   </div>
                 </li>
