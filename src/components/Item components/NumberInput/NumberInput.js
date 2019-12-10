@@ -1,26 +1,37 @@
 import React from 'react';
 import {MdDelete} from 'react-icons/md';
+import NumberInputPopup from "../../Editable components/NumberInputPopup/NumberInput";
+
 import style from './NumberInput.module.css';
-import ParagraphPopup from "../../Editable components/ParagraphPopup/ParagraphPopup";
 
 class NumberInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      listDataFromChild: 'Number input...'
+    }
   }
 
+  myCallback = (listInfo) => {
+    this.setState({
+      listDataFromChild: listInfo
+    });
+  };
+
   render() {
+    const {listDataFromChild} = this.state;
+
     return (
       <div className={style.item_container}>
         <div className={style.buttons}>
-          <ParagraphPopup />
+          <NumberInputPopup callbackFromParent={this.myCallback}/>
           <button className={style.dButton}>
-            <MdDelete className={style.icon} onClick={this.deleted}/>
+            <MdDelete className={style.icon} />
           </button>
         </div>
         <div className={style.title}>
           <h4>
-            Number input...
+            {listDataFromChild}
           </h4>
           <input className={style.input} disabled/>
         </div>

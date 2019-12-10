@@ -1,8 +1,9 @@
 import React from 'react';
 import ITEMS from './data'
-import style from './App.module.css';
 import FormPreview from "../FormPreview/FormPreview";
-import Item from './../Item/Item'
+import Item from './../Item/Item';
+
+import style from './App.module.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,8 +12,9 @@ class App extends React.Component {
     this.state = {
       dropItems: [],
       display: false
-    }
+    };
   }
+
   onDragStart = (e, v) => {
     this.draggedItem = v;
     e.dataTransfer.dropEffect = "move";
@@ -57,12 +59,13 @@ class App extends React.Component {
     e.dataTransfer.setData("id", e.target.parentNode);
   };
 
-  onSortDragOver = index => {
+  onSortDragOver = (index) => {
     const draggedOverItem = this.state.dropItems[index];
     if (this.draggedItem === draggedOverItem) {
       return;
     }
-    let dropItems = this.state.dropItems.filter(item => item !== this.draggedItem);
+    let dropItems = this.state.dropItems.filter(item =>
+      item !== this.draggedItem);
     dropItems.splice(index, 0, this.draggedItem);
     this.setState({dropItems});
   };
@@ -73,13 +76,19 @@ class App extends React.Component {
   };
 
   deleteItem = (uniqueId) => {
-    let d = this.state.dropItems.filter(item => item.id !== uniqueId);
+    let d = this.state.dropItems.filter(item =>
+      item.id !== uniqueId);
     this.setState( {
       dropItems: d
     })
   };
 
+  dataCall = (headerData) => {
+
+  };
+
   render() {
+
     return (
       <div className={style.app_container}>
         <div className={style.drop_zone}>
@@ -106,8 +115,7 @@ class App extends React.Component {
                     onDragEnd={this.onSortDragEnd}
                   >
                     <Item
-                      dropItems={this.state.dropItems}
-                      data={this.props.data}
+                      dataCall={this.dataCall}
                       id={item.id}
                       onDelete={this.deleteItem}
                     />

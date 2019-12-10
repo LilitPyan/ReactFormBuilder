@@ -1,7 +1,8 @@
 import React from 'react';
-import {FiEdit, FiPlusCircle, FiMinusCircle} from 'react-icons/fi';
-import style from './DropdownPopup.module.css';
+import {FiEdit, FiMinusCircle, FiPlusCircle} from 'react-icons/fi';
 import Popup from "reactjs-popup";
+
+import style from './DropdownPopup.module.css';
 
 class DropdownPopup extends React.Component {
   constructor(props) {
@@ -9,14 +10,14 @@ class DropdownPopup extends React.Component {
     this.state = {
       open: false,
       options: [
-        {name:'Place holder option 1', id:1},
-        {name:'Place holder option 2', id:2},
-        {name:'Place holder option 3', id:3}
+        {name: 'Place holder option 1', id: 1},
+        {name: 'Place holder option 2', id: 2},
+        {name: 'Place holder option 3', id: 3}
       ],
       option: {
-        name:'',
-        value:'',
-        id:''
+        name: '',
+        value: '',
+        id: ''
       }
     };
   }
@@ -35,21 +36,22 @@ class DropdownPopup extends React.Component {
     this.props.callbackFromParent(listInfo);
   };
 
-  handleChange = ({target:{name,value}}) => {
+  handleChange = (ev) => {
     this.setState({
       option: {
-        [name]:value,
-        id: Date.now()
+        id: Date.now(),
+        name: ev.target.name,
+        value: ev.target.value
       }
     })
   };
 
-  addOption= (e) => {
+  addOption = (e) => {
     e.preventDefault();
 
     const newOption = this.state.option;
     this.setState({
-      options: [ newOption, ...this.state.options],
+      options: [newOption, ...this.state.options],
       option: {
         text: '',
         id: ''
@@ -67,7 +69,7 @@ class DropdownPopup extends React.Component {
   };
 
 
-  render(){
+  render() {
     const {open, options} = this.state;
     return (
       <div className={style.popup}>
@@ -82,8 +84,8 @@ class DropdownPopup extends React.Component {
                 <th>Value</th>
                 <th></th>
               </tr>
-              {options.map((option)=>{
-                return(
+              {options.map((option) => {
+                return (
                   <tr id={option.id}>
                     <td>
                       <input
@@ -104,16 +106,10 @@ class DropdownPopup extends React.Component {
                     </td>
                     <td className={style.buttons}>
                       <button className={style.plus_btn} onClick={this.openModal}>
-                        <FiPlusCircle
-                          className={style.plus_icon}
-                          onClick={this.addOption}
-                        />
+                        <FiPlusCircle className={style.plus_icon} onClick={this.addOption}/>
                       </button>
                       <button className={style.minus_btn} onClick={this.openModal}>
-                        <FiMinusCircle
-                          className={style.minus_icon}
-                          onClick={(id)=>this.deleteOption(option.id)}
-                        />
+                        <FiMinusCircle className={style.minus_icon} onClick={(id) => this.deleteOption(option.id)}/>
                       </button>
                     </td>
                   </tr>
@@ -126,7 +122,6 @@ class DropdownPopup extends React.Component {
           </div>
         </Popup>
       </div>
-
     )
   }
 }

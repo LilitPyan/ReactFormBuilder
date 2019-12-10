@@ -1,7 +1,8 @@
 import React from 'react';
-import style from './Dropdown.module.css';
 import {MdDelete} from 'react-icons/md';
 import DropdownPopup from "../../Editable components/DropdownPopup/DropdownPopup";
+
+import style from './Dropdown.module.css';
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Dropdown extends React.Component {
             Select name...
           </h5>
           <select className={style.select} disabled>
-            <option>{listDataFromChild}</option>
+            <option>{listDataFromChild.name}</option>
           </select>
         </div>
       </div>

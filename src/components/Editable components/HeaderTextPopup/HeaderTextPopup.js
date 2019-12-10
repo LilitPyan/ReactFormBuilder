@@ -10,7 +10,7 @@ class HeaderTextPopup extends React.Component {
     super(props);
     this.state = {
       open: false,
-      text: 'Header text...'
+      headerName: 'Header text...'
     }
   };
 
@@ -21,21 +21,18 @@ class HeaderTextPopup extends React.Component {
   };
 
   closeModal = (ev) => {
-    this.setState({
-      open: false
-    });
-    const listInfo = this.state.text;
-    this.props.callbackFromParent(listInfo);
+    this.setState({ open: false },
+      () => this.props.callbackFromParent(this.state.headerName));
   };
 
   handleChange = (ev) => {
     this.setState({
-      text: ev.target.value
+      headerName: ev.target.value
     });
   };
 
   render() {
-    const {text, open} = this.state;
+    const { headerName, open } = this.state;
 
     return (
       <div className={style.popup}>
@@ -44,7 +41,7 @@ class HeaderTextPopup extends React.Component {
         </button>
         <Popup open={open} onClose={this.closeModal}>
           <div className={style.modal}>
-            <input className={style.textarea} value={text} onChange={this.handleChange}/>
+            <input className={style.textarea} value={headerName} onChange={this.handleChange}/>
             <button className={style.cButton} onClick={this.closeModal}>
               Close
             </button>

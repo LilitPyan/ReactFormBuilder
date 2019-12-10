@@ -109,16 +109,10 @@ class CheckboxPopup extends React.Component {
                     </td>
                     <td className={style.buttons}>
                       <button className={style.plus_btn} onClick={this.openModal}>
-                        <FiPlusCircle
-                          className={style.plus_icon}
-                          onClick={this.addOption}
-                        />
+                        <FiPlusCircle className={style.plus_icon} onClick={this.addOption}/>
                       </button>
                       <button className={style.minus_btn} onClick={this.openModal}>
-                        <FiMinusCircle
-                          className={style.minus_icon}
-                          onClick={(id) => this.deleteOption(option.id)}
-                        />
+                        <FiMinusCircle className={style.minus_icon} onClick={(id) => this.deleteOption(option.id)}/>
                       </button>
                     </td>
                   </tr>

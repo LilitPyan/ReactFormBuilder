@@ -1,24 +1,26 @@
 import React from "react";
 import style from "./FormItems.module.css"
+import ITEMS from "../App/data";
 
-function FormItems({ id }) {
+
+function FormItems({id}) {
   switch (id) {
     case 1:
       return (
         <h4 className={style.form_header}>
-          header
+          {ITEMS[0].data[0]}
         </h4>
       );
     case 2:
       return (
         <label className={style.form_label}>
-          label
+          {ITEMS[1].data[0]}
         </label>
       );
     case 3:
       return (
         <p className={style.form_paragraph}>
-          paragraph
+          {ITEMS[2].data[0]}
         </p>
       );
     case 4:
@@ -34,9 +36,19 @@ function FormItems({ id }) {
     case 7:
       return <input type='radio' className={style.form_multipleChoice}/>;
     case 8:
-      return <input type='text' className={style.form_textInput}/>;
+      return (
+        <>
+          <p> {ITEMS[7].data[0]}</p>
+          <input type='text' className={style.form_textInput}/>
+        </>
+      );
     case 9:
-      return <input type='number' className={style.form_numberInput}/>;
+      return(
+        <>
+          <p> {ITEMS[8].data[0]}</p>
+          <input type='number' className={style.form_numberInput}/>
+          </>
+          );
     case 10:
       return <input type='image' className={style.form_image}/>;
     default:

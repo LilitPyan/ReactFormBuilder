@@ -1,30 +1,41 @@
 import React from 'react';
 import {MdDelete} from 'react-icons/md';
-import style from './Paragraph.module.css';
 import ParagraphPopup from "../../Editable components/ParagraphPopup/ParagraphPopup";
 
-class Paragraph extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {}
-    }
+import style from './Paragraph.module.css';
 
-    render() {
-      return (
-        <div className={style.item_container}>
-          <div className={style.buttons}>
-            <ParagraphPopup />
-            <button className={style.dButton}>
-              <MdDelete className={style.icon} onClick={this.deleted}/>
-            </button>
-          </div>
-          <div className={style.title}>
-            <h4>
-              Paragraph...
-            </h4>
-          </div>
+class Paragraph extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      listDataFromChild: 'Paragraph...'
+    }
+  }
+
+  myCallback = (listInfo) => {
+    this.setState({
+      listDataFromChild: listInfo
+    });
+  };
+
+  render() {
+    const {listDataFromChild} = this.state;
+
+    return (
+      <div className={style.item_container}>
+        <div className={style.buttons}>
+          <ParagraphPopup callbackFromParent={this.myCallback}/>
+          <button className={style.dButton}>
+            <MdDelete className={style.icon} onClick={this.deleted}/>
+          </button>
         </div>
-      )
+        <div className={style.title}>
+          <h5>
+            {listDataFromChild}
+          </h5>
+        </div>
+      </div>
+    )
   }
 }
 

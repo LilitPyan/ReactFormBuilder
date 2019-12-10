@@ -33,7 +33,7 @@ class Checkbox extends React.Component {
         </div>
         <form className={style.form}>
           <h4 className={style.title}>Checkbox...</h4>
-          {listDataFromChild.map((item, i) => {
+          {listDataFromChild.map(( item ) => {
             return (
               <div id={item.id}>
                 <p>{item.name}</p>

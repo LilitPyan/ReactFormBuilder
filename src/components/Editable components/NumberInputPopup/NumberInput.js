@@ -1,15 +1,15 @@
 import React from 'react';
 import {FiEdit} from 'react-icons/fi';
-import style from './NumberInput.module.css';
 import Popup from "reactjs-popup";
+
+import style from './NumberInput.module.css';
 
 class NumberInputPopup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      values: [],
-      value:{},
-      open: false
+      open: false,
+      text: 'Number input...'
     };
   }
 
@@ -22,43 +22,35 @@ class NumberInputPopup extends React.Component {
   closeModal = () => {
     this.setState({
       open: false
-    })
+    });
+    const listInfo = this.state.text;
+    this.props.callbackFromParent(listInfo);
   };
 
   handleChange = (ev) => {
-    this.setState({});
+    this.setState({
+      text: ev.target.value
+    });
   };
 
-
   render() {
-    const { value, values, open }=this.state;
+    const {text, open} = this.state;
     return (
       <div className={style.popup}>
         <button className={style.eButton} onClick={this.openModal}>
           <FiEdit className={style.icon}/>
         </button>
-        <Popup
-          open={open}
-          closeOnDocumentClick
-          onClose={this.closeModal}
-        >
+        <Popup open={open} closeOnDocumentClick onClose={this.closeModal}>
           <div className={style.modal}>
-            <input
-              className={style.textarea}
-              value={value}
-              onChange={this.handleChange}
-            />
-            <button
-              className={style.cButton}
-              onClick={this.closeModal}
-            >
+            <input className={style.textarea} value={text} onChange={this.handleChange}/>
+            <button className={style.cButton} onClick={this.closeModal}>
               Close
             </button>
           </div>
         </Popup>
       </div>
-
     )
   }
 }
+
 export default NumberInputPopup;
