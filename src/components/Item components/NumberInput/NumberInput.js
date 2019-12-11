@@ -8,32 +8,42 @@ class NumberInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listDataFromChild: 'Number input...'
+      inputName: 'Number input...'
     }
   }
 
-  myCallback = (listInfo) => {
-    this.setState({
-      listDataFromChild: listInfo
-    });
+  dataCallback = (inputInfo) => {
+    this.setState({inputName: inputInfo},
+      () => this.props.data.unshift(inputInfo));
+  };
+
+  delete = () => {
+    this.props.dataCall(this.props.id);
   };
 
   render() {
-    const {listDataFromChild} = this.state;
+    const {inputName} = this.state;
 
     return (
       <div className={style.item_container}>
         <div className={style.buttons}>
-          <NumberInputPopup callbackFromParent={this.myCallback}/>
+          <NumberInputPopup
+            callbackFromParent={this.dataCallback}
+          />
           <button className={style.dButton}>
-            <MdDelete className={style.icon} />
+            <MdDelete
+              className={style.icon}
+              onClick={this.delete}/>
           </button>
         </div>
         <div className={style.title}>
           <h4>
-            {listDataFromChild}
+            {inputName}
           </h4>
-          <input className={style.input} disabled/>
+          <input
+            className={style.input}
+            disabled
+          />
         </div>
       </div>
     )

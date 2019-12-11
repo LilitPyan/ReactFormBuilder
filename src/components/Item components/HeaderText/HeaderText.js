@@ -10,15 +10,13 @@ class HeaderText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerName: 'Header text...',
-      deleted: false
+      headerName: 'Header text...'
     };
   }
 
-  myCallback = (headerInfo) => {
-    this.setState({
-      headerName: headerInfo
-    }, () =>  this.props.data.unshift(headerInfo));
+  dataCallback = (headerInfo) => {
+    this.setState({ headerName: headerInfo },
+      () => this.props.data.unshift(headerInfo));
   };
 
   delete = () => {
@@ -32,7 +30,7 @@ class HeaderText extends React.Component {
       <div className={style.item_container}>
         <div className={style.buttons}>
           <HeaderTextPopup
-            callbackFromParent={this.myCallback}
+            callbackFromParent={this.dataCallback}
           />
           <button className={style.dButton}>
             <MdDelete

@@ -8,30 +8,36 @@ class Label extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listDataFromChild: 'Label...'
+      labelName: 'Label...'
     }
   };
 
-  myCallback = (listInfo) => {
-    this.setState({
-      listDataFromChild: listInfo
-    })
+  dataCallback = (labelInfo) => {
+    this.setState({labelName: labelInfo},
+      () =>  this.props.data.unshift(labelInfo))
+  };
+
+  delete = () => {
+    this.props.dataCall(this.props.id);
   };
 
   render() {
-    const {listDataFromChild} = this.state;
+    const {labelName} = this.state;
 
     return (
       <div className={style.item_container}>
         <div className={style.buttons}>
-          <LabelPopup callbackFromParent={this.myCallback}/>
+          <LabelPopup callbackFromParent={this.dataCallback}/>
           <button className={style.dButton}>
-            <MdDelete className={style.icon}/>
+            <MdDelete
+              className={style.icon}
+              onClick={this.delete}
+            />
           </button>
         </div>
         <div className={style.title}>
           <h4>
-            {listDataFromChild}
+            {labelName}
           </h4>
         </div>
       </div>

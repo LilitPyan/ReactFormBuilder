@@ -34,7 +34,7 @@ class FormPreview extends React.Component {
         <Popup open={this.state.open} closeOnDocumentClick onClose={this.closeModal}>
           <div className="modal">
             <form>
-            {data.map(item => <FormItems id={item.id} />)}
+            {data.map(item => <FormItems id={item.id} data={item.data}/>)}
             </form>
             <div className="buttons">
               <button className="save_btn">

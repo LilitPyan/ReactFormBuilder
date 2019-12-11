@@ -8,30 +8,38 @@ class Paragraph extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listDataFromChild: 'Paragraph...'
+      paragraphName: 'Paragraph...'
     }
   }
 
-  myCallback = (listInfo) => {
-    this.setState({
-      listDataFromChild: listInfo
-    });
+  dataCallback = (paragraphInfo) => {
+    this.setState({ paragraphName: paragraphInfo },
+      () => this.props.data.unshift(paragraphInfo));
+  };
+
+  delete = () => {
+    this.props.dataCall(this.props.id);
   };
 
   render() {
-    const {listDataFromChild} = this.state;
+    const { paragraphName } = this.state;
 
     return (
       <div className={style.item_container}>
         <div className={style.buttons}>
-          <ParagraphPopup callbackFromParent={this.myCallback}/>
+          <ParagraphPopup
+            callbackFromParent={this.dataCallback}
+          />
           <button className={style.dButton}>
-            <MdDelete className={style.icon} onClick={this.deleted}/>
+            <MdDelete
+              className={style.icon}
+              onClick={this.delete}
+            />
           </button>
         </div>
         <div className={style.title}>
           <h5>
-            {listDataFromChild}
+            {paragraphName}
           </h5>
         </div>
       </div>

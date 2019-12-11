@@ -9,7 +9,7 @@ class LabelPopup extends React.Component {
     super(props);
     this.state = {
       open: false,
-      text: 'Label...'
+      labelName: 'Label...'
     };
   }
 
@@ -20,31 +20,42 @@ class LabelPopup extends React.Component {
   };
 
   closeModal = () => {
-    this.setState({
-      open: false
-    });
-    const listInfo = this.state.text;
-    this.props.callbackFromParent(listInfo);
+    this.setState({open: false},
+      () => this.props.callbackFromParent(this.state.labelName));
   };
 
   handleChange = (ev) => {
     this.setState({
-      text: ev.target.value
+      labelName: ev.target.value
     });
   };
 
   render() {
-    const { open, text } = this.state;
+    const {open, labelName} = this.state;
 
     return (
       <div className={style.popup}>
-        <button className={style.eButton} onClick={this.openModal}>
-          <FiEdit className={style.icon} />
+        <button
+          className={style.eButton}
+          onClick={this.openModal}
+        >
+          <FiEdit className={style.icon}/>
         </button>
-        <Popup open={open} closeOnDocumentClick onClose={this.closeModal}>
+        <Popup
+          open={open}
+          closeOnDocumentClick
+          onClose={this.closeModal}
+        >
           <div className={style.modal}>
-            <input className={style.textarea} value={text} onChange={this.handleChange}/>
-            <button className={style.cButton} onClick={this.closeModal}>
+            <input
+              className={style.textarea}
+              value={labelName}
+              onChange={this.handleChange}
+            />
+            <button
+              className={style.cButton}
+              onClick={this.closeModal}
+            >
               Close
             </button>
           </div>
@@ -53,4 +64,5 @@ class LabelPopup extends React.Component {
     )
   }
 }
+
 export default LabelPopup;

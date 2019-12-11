@@ -8,29 +8,41 @@ class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listDataFromChild: 'Header text...'
+      imageUrl: ''
     }
   }
 
-  myCallback = (listInfo) => {
+  dataCallback = (imageUrl) => {
     this.setState({
-      listDataFromChild: listInfo
-    });
+      imageUrl: imageUrl
+    }, () => this.props.data.unshift(imageUrl));
+  };
+
+  delete = () => {
+    this.props.dataCall(this.props.id);
   };
 
   render() {
-    const {listDataFromChild} = this.state;
+    const {imageUrl} = this.state;
 
     return (
       <div className={style.item_container}>
         <div className={style.buttons}>
-          <ImagePopup callbackFromParent={this.myCallback}/>
+          <ImagePopup callbackFromParent={this.dataCallback}/>
           <button className={style.dButton}>
-            <MdDelete className={style.icon} onClick={this.deleted}/>
+            <MdDelete
+              className={style.icon}
+              onClick={this.delete}
+            />
           </button>
         </div>
         <div className={style.title}>
-          <input className={style.image} src={listDataFromChild} placeholder='No image' disabled/>
+          <input
+            className={style.image}
+            src={imageUrl}
+            placeholder='No image'
+            disabled
+          />
         </div>
       </div>
     )

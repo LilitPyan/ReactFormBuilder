@@ -8,32 +8,43 @@ class TextInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listDataFromChild: 'Text input...'
+      inputName: 'Text input...'
     }
   }
 
-  myCallback = (listInfo) => {
-    this.setState({
-      listDataFromChild: listInfo
-    });
+  dataCallback = (inputInfo) => {
+    this.setState({inputName: inputInfo},
+      () => this.props.data.unshift(inputInfo));
+  };
+
+  delete = () => {
+    this.props.dataCall(this.props.id);
   };
 
   render() {
-    const {listDataFromChild} = this.state;
+    const {inputName} = this.state;
 
     return (
       <div className={style.item_container}>
         <div className={style.buttons}>
-          <TextInputPopup callbackFromParent={this.myCallback}/>
+          <TextInputPopup
+            callbackFromParent={this.dataCallback}
+          />
           <button className={style.dButton}>
-            <MdDelete className={style.icon} onClick={this.deleted}/>
+            <MdDelete
+              className={style.icon}
+              onClick={this.delete}
+            />
           </button>
         </div>
         <div className={style.title}>
           <h4>
-            {listDataFromChild}
+            {inputName}
           </h4>
-          <input className={style.input} disabled/>
+          <input
+            className={style.input}
+            disabled
+          />
         </div>
       </div>
     )

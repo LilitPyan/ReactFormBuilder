@@ -9,7 +9,7 @@ class ParagraphPopup extends React.Component {
     super(props);
     this.state = {
       open: false,
-      text: 'Paragraph...'
+      paragraphName: 'Paragraph...'
     }
   }
 
@@ -20,30 +20,41 @@ class ParagraphPopup extends React.Component {
   };
 
   closeModal = (ev) => {
-    this.setState({
-      open: false
-    });
-    const listInfo = this.state.text;
-    this.props.callbackFromParent(listInfo);
+    this.setState({open: false},
+      () => this.props.callbackFromParent(this.state.parameterName));
   };
 
   handleChange = (ev) => {
     this.setState({
-      text: ev.target.value
+      paragraphName: ev.target.value
     });
   };
 
   render() {
-    const {text, open} = this.state;
+    const {paragraphName, open} = this.state;
+
     return (
       <div className={style.popup}>
-        <button className={style.eButton} onClick={this.openModal}>
+        <button
+          className={style.eButton}
+          onClick={this.openModal}
+        >
           <FiEdit className={style.icon}/>
         </button>
-        <Popup open={open} closeOnDocumentClick onClose={this.closeModal}>
+        <Popup
+          open={open}
+          onClose={this.closeModal}
+        >
           <div className={style.modal}>
-            <input className={style.textarea} value={text} onChange={this.handleChange}/>
-            <button className={style.cButton} onClick={this.closeModal}>
+            <input
+              className={style.textarea}
+              value={paragraphName}
+              onChange={this.handleChange}
+            />
+            <button
+              className={style.cButton}
+              onClick={this.closeModal}
+            >
               Close
             </button>
           </div>

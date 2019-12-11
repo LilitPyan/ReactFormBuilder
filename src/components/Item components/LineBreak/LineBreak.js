@@ -5,37 +5,21 @@ import {MdDelete} from 'react-icons/md';
 class LineBreak extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isVisible: false
-    }
   }
 
-  mouseOver = () => {
-    this.setState({
-      isVisible: true
-    })
-  };
-
-  mouseLeave = () => {
-    this.setState({
-      isVisible: false
-    })
+  delete = () => {
+    this.props.dataCall(this.props.id);
   };
 
   render() {
     return (
-      <div
-        className={style.linebreak}
-        onMouseOver={this.mouseOver}
-        onMouseLeave={this.mouseLeave}
-      >
-        {this.state.isVisible &&
-        <>
-          <button className={style.dButton}>
-            <MdDelete className={style.icon}/>
-          </button>
-        </>
-        }
+      <div className={style.linebreak}>
+        <button className={style.dButton}>
+          <MdDelete
+            className={style.icon}
+            onClick={this.delete}
+          />
+        </button>
         <p className={style.line}/>
       </div>
     )

@@ -14,11 +14,15 @@
     border-radius: 5px;
 }
 
+.linebreak:hover .dButton{
+    visibility: visible;
+}
+
 .line {
     background-color: darkslategray;
     width: 470px;
     margin-left: 10px;
-    height: 3px;
+    height: 2px;
     margin-bottom: -10px;
 }
 
@@ -31,6 +35,7 @@
     height: 20px;
     border-radius: 2px;
     background-color: white;
+    visibility: hidden;
 }
 
 .icon {
