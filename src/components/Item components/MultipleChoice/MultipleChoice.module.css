@@ -1,6 +1,6 @@
 .item_container {
     width: 590px;
-    height: 130px;
+    min-height: 110px;
     margin-top: 10px;
     padding-left: 15px;
     border: 2px solid white;
@@ -58,13 +58,17 @@
     width: 300px;
 }
 
-p {
-    margin-bottom: -35px;
+.form li {
     margin-top: 10px;
-    padding-left: 30px;
-    height: 20px;
+    height: 15px;
     color: darkslategray;
     font-size: 15px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form p{
+    margin-top: -23px;
 }
 
 input {

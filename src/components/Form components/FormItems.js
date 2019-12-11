@@ -26,18 +26,23 @@ function FormItems({id, data}) {
     case 5:
       return (
         <select className={style.form_select}>
-          {data.map((option)=>{
-          return(
-            <option id={option.id} value={option.optValue}>{option.optValue}</option>
-          )
-          })}
+            <option>{data[0]}</option>
         </select>
       );
     case 6:
-      return <input type='checkbox' className={style.form_checkbox}/>;
+      return(
+
+              <>
+             <input type='checkbox' className={style.form_textInput}/>
+             <p>{data[0]}</p>
+        </>
+      );
     case 7:
-      return <input type='radio' className={style.form_multipleChoice}/>;
-    case 8:
+      return <p>{data[0].text}</p>;
+
+
+
+      case 8:
       return (
         <>
           <label>{data[0]}</label> :

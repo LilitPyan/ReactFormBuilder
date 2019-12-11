@@ -6,14 +6,16 @@ import MultipleChoicePopup from "../../Editable components/MultipleChoicePopup/M
 class MultipleChoice extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      options:[]
-    }
+      this.state = {
+        items: [{text:'Choice one'}, {text:'Choice two'},{text: 'Choice three'}],
+        text: ''
+      }
   }
 
   dataCallback = (optionInfo) => {
-    this.setState({ options: [optionInfo] },
-      () => this.props.data.unshift(optionInfo));
+    this.setState({ items: optionInfo },
+      () => this.props.data.push(this.state.items));
+    console.log(this.props.data)
   };
 
   delete = () => {
@@ -29,25 +31,19 @@ class MultipleChoice extends React.Component {
             <MdDelete className={style.icon} onClick={this.delete}/>
           </button>
         </div>
-        <form className={style.form}>
-          <h4 className={style.title}>Multiple choice...</h4>
-          <ul>
-          {this.state.options.map(option => {
-            return option.map(option => (
-              <li>
-              <p>{option.name}</p>
-              <input
-                type="radio"
-                key={option.id}
-                value={option.value}
-                defaultChecked={false}
-              disabled
-              />
-              </li>
-            ))
-          })}
-          </ul>
-        </form>
+          <div>
+            <h4 className={style.title}>Multiple choice...</h4>
+            <form className={style.form}>
+              <ul>
+                {this.state.items.map(item => (
+                  <li key={item.text}>
+                  <input type='radio' disabled/>
+                  <p>{item.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </form>
+          </div>
       </div>
     )
   }
