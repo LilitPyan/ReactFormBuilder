@@ -36,13 +36,26 @@ class HeaderTextPopup extends React.Component {
 
     return (
       <div className={style.popup}>
-        <button className={style.eButton} onClick={this.openModal}>
+        <button
+          className={style.eButton}
+          onClick={this.openModal}
+        >
           <FiEdit className={style.icon}/>
         </button>
-        <Popup open={open} onClose={this.closeModal}>
+        <Popup
+          open={open}
+          onClose={this.closeModal}
+        >
           <div className={style.modal}>
-            <input className={style.textarea} value={headerName} onChange={this.handleChange}/>
-            <button className={style.cButton} onClick={this.closeModal}>
+            <input
+              className={style.textarea}
+              value={headerName}
+              onChange={this.handleChange}
+            />
+            <button
+              className={style.cButton}
+              onClick={this.closeModal}
+            >
               Close
             </button>
           </div>

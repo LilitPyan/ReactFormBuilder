@@ -10,15 +10,19 @@ class HeaderText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerName: 'Header text...'
-    }
+      headerName: 'Header text...',
+      deleted: false
+    };
   }
 
   myCallback = (headerInfo) => {
     this.setState({
-      headerName: headerInfo,
-    }, () => ITEMS[0].data.unshift(headerInfo));
+      headerName: headerInfo
+    }, () =>  this.props.data.unshift(headerInfo));
+  };
 
+  delete = () => {
+    this.props.dataCall(this.props.id);
   };
 
   render() {
@@ -33,7 +37,7 @@ class HeaderText extends React.Component {
           <button className={style.dButton}>
             <MdDelete
               className={style.icon}
-              onClick={this.props.deleteItem}
+              onClick={this.delete}
             />
           </button>
         </div>

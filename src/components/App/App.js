@@ -75,16 +75,16 @@ class App extends React.Component {
     this.ordering = false;
   };
 
-  deleteItem = (uniqueId) => {
+  deleteItem = (id) => {
     let d = this.state.dropItems.filter(item =>
-      item.id !== uniqueId);
+      item.id !== id);
     this.setState( {
       dropItems: d
-    })
+    });
   };
 
-  dataCall = (headerData) => {
-
+  dataCall = (dId) => {
+       this.deleteItem(dId);
   };
 
   render() {
@@ -116,8 +116,8 @@ class App extends React.Component {
                   >
                     <Item
                       dataCall={this.dataCall}
+                      data={item.data}
                       id={item.id}
-                      onDelete={this.deleteItem}
                     />
                   </div>
                 </li>
