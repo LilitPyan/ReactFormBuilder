@@ -21,7 +21,7 @@ class ParagraphPopup extends React.Component {
 
   closeModal = (ev) => {
     this.setState({open: false},
-      () => this.props.callbackFromParent(this.state.parameterName));
+      () => this.props.callbackFromParent(this.state.paragraphName));
   };
 
   handleChange = (ev) => {

@@ -10,14 +10,11 @@ class DropdownPopup extends React.Component {
     this.state = {
       open: false,
       options: [
-        {name: 'Place holder option 1', id: 1},
-        {name: 'Place holder option 2', id: 2},
-        {name: 'Place holder option 3', id: 3}
+        { optName: '', optValue: ''}
       ],
       option: {
-        name: '',
-        value: '',
-        id: ''
+        optName: '',
+        optValue: '',
       }
     };
   }
@@ -29,19 +26,16 @@ class DropdownPopup extends React.Component {
   };
 
   closeModal = () => {
-    this.setState({
-      open: false
-    });
-    const listInfo = this.state.options;
-    this.props.callbackFromParent(listInfo);
+    const {option}=this.state;
+    this.setState({open: false, options: [...this.state.options, option] },
+      () => this.props.callbackFromParent(this.state.options));
   };
 
-  handleChange = (ev) => {
+  handleChange = ({ target: { name, value }}) => {
     this.setState({
       option: {
-        id: Date.now(),
-        name: ev.target.name,
-        value: ev.target.value
+        [name] : value,
+        id: Date.now()
       }
     })
   };
@@ -51,10 +45,11 @@ class DropdownPopup extends React.Component {
 
     const newOption = this.state.option;
     this.setState({
-      options: [newOption, ...this.state.options],
+      options:[...this.state.options, newOption],
       option: {
-        text: '',
-        id: ''
+        id: Date.now(),
+        optName: '',
+        optValue: ''
       }
     });
   };
@@ -70,13 +65,19 @@ class DropdownPopup extends React.Component {
 
 
   render() {
-    const {open, options} = this.state;
+    const { open, options } = this.state;
     return (
       <div className={style.popup}>
-        <button className={style.eButton} onClick={this.openModal}>
+        <button
+          className={style.eButton}
+          onClick={this.openModal}
+        >
           <FiEdit className={style.icon}/>
         </button>
-        <Popup open={open} closeOnDocumentClick onClose={this.closeModal}>
+        <Popup
+          open={open}
+          onClose={this.closeModal}
+        >
           <div className={style.modal}>
             <table>
               <tr>
@@ -91,32 +92,44 @@ class DropdownPopup extends React.Component {
                       <input
                         className={style.option}
                         name='name'
-                        value={option.name}
                         onChange={this.handleChange}
-                        placeholder={option.name}
                       />
                     </td>
                     <td>
                       <input
                         name='value'
-                        value={option.value}
                         className={style.value}
                         onChange={this.handleChange}
                       />
                     </td>
                     <td className={style.buttons}>
-                      <button className={style.plus_btn} onClick={this.openModal}>
-                        <FiPlusCircle className={style.plus_icon} onClick={this.addOption}/>
+                      <button
+                        className={style.plus_btn}
+                        onClick={this.openModal}
+                      >
+                        <FiPlusCircle
+                          className={style.plus_icon}
+                          onClick={this.addOption}
+                        />
                       </button>
-                      <button className={style.minus_btn} onClick={this.openModal}>
-                        <FiMinusCircle className={style.minus_icon} onClick={(id) => this.deleteOption(option.id)}/>
+                      <button
+                        className={style.minus_btn}
+                        onClick={this.openModal}
+                      >
+                        <FiMinusCircle
+                          className={style.minus_icon}
+                          onClick={(id) => this.deleteOption(option.id)}
+                        />
                       </button>
                     </td>
                   </tr>
                 )
               })}
             </table>
-            <button className={style.cButton} onClick={this.closeModal}>
+            <button
+              className={style.cButton}
+              onClick={this.closeModal}
+            >
               Close
             </button>
           </div>

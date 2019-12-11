@@ -26,7 +26,11 @@ function FormItems({id, data}) {
     case 5:
       return (
         <select className={style.form_select}>
-          <option>1</option>
+          {data.map((option)=>{
+          return(
+            <option id={option.id} value={option.optValue}>{option.optValue}</option>
+          )
+          })}
         </select>
       );
     case 6:

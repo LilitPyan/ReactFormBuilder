@@ -8,32 +8,33 @@ class Checkbox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listDataFromChild: [
-        {id:1, name: 'Place holder option 1', value: 'option 1'},
-        {id:2, name: 'Place holder option 2', value: 'option 2'},
-        {id:3, name: 'Place holder option 3', value: 'option 3'}
-      ]
+      options: []
     }
   };
 
-  myCallback = (listInfo) => {
-    this.setState({listDataFromChild: listInfo});
+  dataCallback = (optionInfo) => {
+    this.setState({options: optionInfo},
+      () => this.props.data.unshift(optionInfo));
+  };
+
+  delete = () => {
+    this.props.dataCall(this.props.id);
   };
 
   render() {
-    const {listDataFromChild} = this.state;
+    const {options} = this.state;
 
     return (
       <div className={style.item_container}>
         <div className={style.buttons}>
-          <CheckboxPopup callbackFromParent={this.myCallback}/>
+          <CheckboxPopup callbackFromParent={this.dataCallback}/>
           <button className={style.dButton}>
-            <MdDelete className={style.icon} onClick={this.deleted}/>
+            <MdDelete className={style.icon} onClick={this.delete}/>
           </button>
         </div>
         <form className={style.form}>
           <h4 className={style.title}>Checkbox...</h4>
-          {listDataFromChild.map(( item ) => {
+          {options.map(( item ) => {
             return (
               <div id={item.id}>
                 <p>{item.name}</p>

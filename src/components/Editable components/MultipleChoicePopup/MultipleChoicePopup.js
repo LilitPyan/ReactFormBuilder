@@ -28,16 +28,16 @@ class MultipleChoicePopup extends React.Component {
   };
 
   closeModal = () => {
-    this.setState({
-      open: false
-    })
+    const {option}=this.state;
+    this.setState({open: false, options: [...this.state.options, option] },
+      () => this.props.callbackFromParent(this.state.options));
   };
+
 
   handleChange = ({target:{name,value}}) => {
     this.setState({
       option: {
         [name]:value,
-        id: Date.now()
       }
     })
   };
@@ -86,7 +86,6 @@ class MultipleChoicePopup extends React.Component {
                       <input
                         className={style.option}
                         name='name'
-                        value={option.name}
                         onChange={this.handleChange}
                         placeholder={option.name}
                       />
@@ -94,7 +93,6 @@ class MultipleChoicePopup extends React.Component {
                     <td>
                       <input
                         name='value'
-                        value={option.value}
                         className={style.value}
                         onChange={this.handleChange}
                       />

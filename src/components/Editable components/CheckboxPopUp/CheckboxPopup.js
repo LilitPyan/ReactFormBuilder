@@ -10,9 +10,7 @@ class CheckboxPopup extends React.Component {
     this.state = {
       open: false,
       options:  [
-        {id:1, name:'Place holder option 1', value:'option 1'},
-        {id:2, name:'Place holder option 2', value:'option 2'},
-        {id:3, name:'Place holder option 3', value:'option 3'}
+        {id:1, name:'', value:''},
       ],
       option: {
         id:'',
@@ -29,19 +27,15 @@ class CheckboxPopup extends React.Component {
   };
 
   closeModal = () => {
-    this.setState({
-      open: false
-    });
-    const listInfo = this.state.options;
-    this.props.callbackFromParent(listInfo);
+    const {option}=this.state;
+    this.setState({ open: false, options: [...this.state.options, option]},
+      () => this.props.callbackFromParent(this.state.options ))
   };
 
-  handleChange = (ev) => {
+  handleChange = ({ target: { name, value }}) => {
     this.setState({
       option: {
-        id: Date.now(),
-        name: ev.target.name,
-        value: ev.target.value
+        [name] : value
       }
     })
   };
@@ -96,13 +90,11 @@ class CheckboxPopup extends React.Component {
                     <td>
                       <input
                         className={style.option}
-                        value={option.name}
                         onChange={this.handleChange}
                       />
                     </td>
                     <td>
                       <input
-                        value={option.value}
                         className={style.value}
                         onChange={this.handleChange}
                       />

@@ -20,7 +20,7 @@ class HeaderTextPopup extends React.Component {
     })
   };
 
-  closeModal = (ev) => {
+  closeModal = () => {
     this.setState({ open: false },
       () => this.props.callbackFromParent(this.state.headerName));
   };
