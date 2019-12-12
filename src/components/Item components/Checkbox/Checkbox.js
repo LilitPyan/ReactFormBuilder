@@ -19,8 +19,7 @@ class Checkbox extends React.Component {
 
   dataCallback = (optionInfo) => {
     this.setState({ items: optionInfo },
-      () => this.props.data.push(this.state.items));
-    console.log(this.props.data)
+      () => this.props.data.unshift(this.state.items));
   };
 
   delete = () => {

@@ -88,8 +88,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.dropItems)
-
     return (
       <div className={style.app_container}>
         <div className={style.drop_zone}>

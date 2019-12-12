@@ -26,34 +26,58 @@ function FormItems({id, data}) {
     case 5:
       return (
         <select className={style.form_select}>
-            <option>{data[0]}</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
         </select>
       );
     case 6:
-      return(
-
-              <>
-             <input type='checkbox' className={style.form_textInput}/>
-             <p>{data[0]}</p>
-        </>
+      return (
+        <form className={style.form_box}>
+          <label className={style.form_box_label}>
+            <input type='checkbox'/>
+            <p>Check 1</p>
+          </label>
+          <label className={style.form_box_label}>
+            <input type='checkbox'/>
+            <p>Check 2</p>
+          </label>
+          <label className={style.form_box_label}>
+            <input type='checkbox'/>
+            <p>Check 3</p>
+          </label>
+        </form>
       );
     case 7:
-      return
-
-
-      case 8:
       return (
-        <>
-          <label>{data[0]}</label> :
-          <input type='text' className={style.form_textInput}/>
-        </>
+        <form className={style.form_box}>
+          <label className={style.form_box_label}>
+          <input type='radio' />
+          <p>Choice 1</p>
+          </label>
+          <label className={style.form_box_label}>
+          <input type='radio' />
+          <p>Choice 2</p>
+          </label>
+          <label className={style.form_box_label}>
+          <input type='radio' />
+          <p>Choice 3</p>
+          </label>
+        </form>
+      );
+    case 8:
+      return (
+        <div className={style.form_input}>
+          <label>{data[0]}</label>
+          <input type='text'/>
+        </div>
       );
     case 9:
       return (
-        <>
-          <label>{data[0]}</label> :
-          <input type='number' className={style.form_numberInput}/>
-        </>
+        <div className={style.form_input}>
+          <label>{data[0]}</label>
+          <input type='number' />
+        </div>
       );
     case 10:
       return <input type='image' className={style.form_image}/>;
