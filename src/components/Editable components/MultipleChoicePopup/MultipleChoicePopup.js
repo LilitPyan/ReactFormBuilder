@@ -83,7 +83,7 @@ class MultipleChoicePopup extends React.Component {
                   >
                     <FiPlusCircle
                       className={style.plus_icon}
-                      onClick={this.addOption}
+                      onClick={this.handleSubmit}
                     />
                   </button>
               <ul>
@@ -103,6 +103,12 @@ class MultipleChoicePopup extends React.Component {
                 ))}
                   </ul>
             </form>
+            <button
+              className={style.cButton}
+              onClick={this.closeModal}
+            >
+              Close
+            </button>
           </div>
         </Popup>
       </div>

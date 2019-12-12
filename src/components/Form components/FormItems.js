@@ -38,8 +38,7 @@ function FormItems({id, data}) {
         </>
       );
     case 7:
-      return <p>{data[0].text}</p>;
-
+      return
 
 
       case 8:

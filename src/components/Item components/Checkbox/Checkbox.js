@@ -8,13 +8,19 @@ class Checkbox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      options: []
+      items: [
+        {text: 'Check one'},
+        {text: 'Check two'},
+        {text: 'Check three'}
+        ],
+      text: ''
     }
-  };
+  }
 
   dataCallback = (optionInfo) => {
-    this.setState({options: optionInfo},
-      () => this.props.data.unshift(optionInfo));
+    this.setState({ items: optionInfo },
+      () => this.props.data.push(this.state.items));
+    console.log(this.props.data)
   };
 
   delete = () => {
@@ -22,31 +28,30 @@ class Checkbox extends React.Component {
   };
 
   render() {
-    const {options} = this.state;
-
     return (
       <div className={style.item_container}>
         <div className={style.buttons}>
-          <CheckboxPopup callbackFromParent={this.dataCallback}/>
+          <CheckboxPopup  callbackFromParent={this.dataCallback}/>
           <button className={style.dButton}>
             <MdDelete className={style.icon} onClick={this.delete}/>
           </button>
         </div>
-        <form className={style.form}>
+        <div>
           <h4 className={style.title}>Checkbox...</h4>
-          {options.map(( item ) => {
-            return (
-              <div id={item.id}>
-                <p>{item.name}</p>
-                <input type='checkbox' value={item.value} disabled/>
-              </div>
-            )
-          })}
-        </form>
+          <form className={style.form}>
+            <ul>
+              {this.state.items.map(item => (
+                <li key={item.text}>
+                  <input type='checkbox' disabled/>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
+          </form>
+        </div>
       </div>
     )
   }
 }
-
-export default Checkbox
+export default Checkbox;
 

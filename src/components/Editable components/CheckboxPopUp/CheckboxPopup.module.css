@@ -6,18 +6,13 @@
 }
 
 .modal {
-    min-height: 180px;
+    min-height: 250px;
     width: 643px;
     border-style: ridge;
     background-color: lightsteelblue;;
     padding-top: -25px;
     padding-left: 25px;
     display: inline-block;
-}
-
-label {
-    font-size: 15px;
-    font-weight: bolder;
 }
 
 .buttons {
@@ -27,20 +22,35 @@ label {
     margin-top: -15px;
 }
 
-.option{
-    height: 18px;
-    width: 200px;
+.add_input{
+    height: 24px;
+    width: 300px;
     border-radius: 3px;
     margin-top: 11px;
     outline: none;
 }
 
-.value {
-    height: 18px;
-    width: 100px;
-    border-radius: 3px;
-    margin-top: 11px;
-    outline: none;
+.form{
+    margin-left: -20px;
+}
+
+.form li {
+    margin-top: 10px;
+    height: 25px;
+    color: darkslategray;
+    font-size: 15px;
+    display: block;
+}
+
+.form p{
+    margin-top: -25px;
+    margin-left: 30px;
+}
+
+input {
+    height: 20px;
+    margin-bottom: -30px;
+    margin-top: 13px;
 }
 
 .cButton {
@@ -67,16 +77,16 @@ label {
 }
 
 .plus_icon {
-    height: 18px;
-    width: 18px;
+    height: 25px;
+    width: 40px;
     margin-top: -1px;
     margin-left: -5px;
     background-color: yellowgreen;
 }
 
 .minus_icon {
-    height: 18px;
-    width: 18px;
+    height: 15px;
+    width: 15px;
     margin-top: -1px;
     margin-left: -5px;
     background-color: lightslategray;
@@ -94,21 +104,24 @@ label {
 .plus_btn {
     cursor: pointer;
     outline: none;
-    width: 23px;
-    height: 23px;
-    margin-top: 28px;
+    width: 45px;
+    height: 29px;
     border-radius: 2px;
     background-color: white;
     display: grid;
+    float: right;
+    margin-top: 11px;
+    margin-right: 300px;
 }
 
-.minus_btn {
+.minusBtn {
     cursor: pointer;
     outline: none;
-    width: 23px;
-    height: 23px;
-    margin-top: 28px;
+    width: 20px;
+    height: 20px;
     border-radius: 2px;
     background-color: white;
-    margin-left: 8px;
+    float: right;
+    margin-top: -35px;
+    margin-right: 360px;
 }

@@ -7,7 +7,7 @@
 
 .modal {
     min-height: 250px;
-    width: 581px;
+    width: 643px;
     border-style: ridge;
     background-color: lightsteelblue;;
     padding-top: -25px;
@@ -44,6 +44,7 @@
 
 .form p{
     margin-top: -25px;
+    margin-left: 30px;
 }
 
 input {
@@ -110,7 +111,7 @@ input {
     display: grid;
     float: right;
     margin-top: 11px;
-    margin-right: 230px;
+    margin-right: 300px;
 }
 
 .minus_btn {
@@ -120,6 +121,7 @@ input {
     height: 20px;
     border-radius: 2px;
     background-color: white;
-    margin-left: 240px;
-    margin-top: 12px;
+    float: right;
+    margin-top: -35px;
+    margin-right: 360px;
 }
