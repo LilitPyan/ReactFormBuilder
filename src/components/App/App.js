@@ -4,6 +4,7 @@ import FormPreview from "../FormPreview/FormPreview";
 import Item from './../Item/Item';
 
 import style from './App.module.css';
+import JsonFormat from "../Form components/jsonFormat";
 
 class App extends React.Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class App extends React.Component {
 
   onSortDragStart = (e, index) => {
     this.ordering = true;
+
     this.draggedItem = this.state.dropItems[index];
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("id", e.target.parentNode);
@@ -83,11 +85,12 @@ class App extends React.Component {
     });
   };
 
-  dataCall = (dId) => {
+  dataCallId = (dId) => {
        this.deleteItem(dId);
   };
 
-  render() {
+  render(){
+    console.log(this.state.dropItems);
     return (
       <div className={style.app_container}>
         <div className={style.drop_zone}>
@@ -114,7 +117,7 @@ class App extends React.Component {
                     onDragEnd={this.onSortDragEnd}
                   >
                     <Item
-                      dataCall={this.dataCall}
+                      dataCallId={this.dataCallId}
                       data={item.data}
                       id={item.id}
                     />

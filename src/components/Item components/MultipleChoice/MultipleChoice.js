@@ -7,19 +7,25 @@ class MultipleChoice extends React.Component {
   constructor(props) {
     super(props);
       this.state = {
-        items: [{text:'Choice one'}, {text:'Choice two'},{text: 'Choice three'}],
+        items: [
+          {text: 'Choice one'},
+          {text: 'Choice two'},
+          {text: 'Choice three'}
+          ],
         text: ''
-      }
+      };
   }
 
   dataCallback = (optionInfo) => {
+
+    this.state.items = optionInfo => [...new Set(optionInfo)];
+    console.log(this.state.items);
     this.setState({ items: optionInfo },
       () => this.props.data.push(this.state.items));
-    console.log(this.props.data)
   };
 
   delete = () => {
-    this.props.dataCall(this.props.id);
+    this.props.dataCallId(this.props.id);
   };
 
   render() {

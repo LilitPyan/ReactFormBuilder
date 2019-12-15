@@ -15,7 +15,7 @@ const ITEMS = [
   {
     id: 1,
     name: 'Header Text',
-    data:[],
+    data: [],
     icon: <FaHeading />,
   },
   {

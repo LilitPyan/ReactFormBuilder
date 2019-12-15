@@ -13,12 +13,13 @@ class Label extends React.Component {
   };
 
   dataCallback = (labelInfo) => {
-    this.setState({labelName: labelInfo},
-      () =>  this.props.data.unshift(labelInfo))
+    this.setState({ labelName: labelInfo },
+      () => this.props.data.unshift(labelInfo))
   };
 
+
   delete = () => {
-    this.props.dataCall(this.props.id);
+    this.props.dataCallId(this.props.id);
   };
 
   render() {

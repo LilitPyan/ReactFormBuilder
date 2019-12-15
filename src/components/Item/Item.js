@@ -10,7 +10,7 @@ import MultipleChoice from "../Item components/MultipleChoice/MultipleChoice";
 import TextInput from "../Item components/TextInput/TextInput";
 import NumberInput from "../Item components/NumberInput/NumberInput";
 
-function Item({ id, data, dataCall }) {
+function Item({ id, data, dataCallId, dataUpdate }) {
 
   switch (id) {
     case 1:
@@ -18,7 +18,7 @@ function Item({ id, data, dataCall }) {
         <HeaderText
         id={id}
         data={data}
-        dataCall={dataCall}
+        dataCallId={dataCallId}
       />
       );
     case 2:
@@ -26,7 +26,7 @@ function Item({ id, data, dataCall }) {
         <Label
           id={id}
           data={data}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     case 3:
@@ -34,14 +34,14 @@ function Item({ id, data, dataCall }) {
         <Paragraph
           id={id}
           data={data}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     case 4:
       return (
         <LineBreak
           id={id}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     case 5:
@@ -49,7 +49,7 @@ function Item({ id, data, dataCall }) {
         <Dropdown
           id={id}
           data={data}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     case 6:
@@ -57,7 +57,7 @@ function Item({ id, data, dataCall }) {
         <Checkbox
           id={id}
           data={data}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     case 7:
@@ -65,7 +65,7 @@ function Item({ id, data, dataCall }) {
         <MultipleChoice
           id={id}
           data={data}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     case 8:
@@ -73,7 +73,7 @@ function Item({ id, data, dataCall }) {
         <TextInput
           id={id}
           data={data}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     case 9:
@@ -81,7 +81,7 @@ function Item({ id, data, dataCall }) {
         <NumberInput
           id={id}
           data={data}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     case 10:
@@ -89,7 +89,7 @@ function Item({ id, data, dataCall }) {
         <Image
           id={id}
           data={data}
-          dataCall={dataCall}
+          dataCallId={dataCallId}
         />
         );
     default:

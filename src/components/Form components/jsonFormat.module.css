@@ -1,0 +1,33 @@
+.popup {
+    margin-top: -20px;
+    margin-left: 117px;
+    border-radius: 5px;
+}
+
+.modal {
+    height: 200px;
+    width: 643px;
+    border-style: ridge;
+    padding-top: -25px;
+    padding-left: 25px;
+    display: inline-block;
+}
+
+.eButton {
+    height: 25px;
+    width: 150px;
+    margin-right: 150px;
+    background-color: darkslategray;
+    color: white;
+    margin-left: 390px;
+    outline: none;
+}
+
+.icon {
+    height: 15px;
+    width: 15px;
+    margin-top: -1px;
+    margin-left: -5px;
+    color: darkslategray;
+    background-color: white;
+}

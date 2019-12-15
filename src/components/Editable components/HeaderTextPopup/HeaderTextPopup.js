@@ -25,6 +25,7 @@ class HeaderTextPopup extends React.Component {
       () => this.props.callbackFromParent(this.state.headerName));
   };
 
+
   handleChange = (ev) => {
     this.setState({
       headerName: ev.target.value

@@ -13,7 +13,6 @@
 }
 
 .buttons{
-    float: right;
     margin-top: 435px;
 }
 
@@ -32,6 +31,7 @@
     cursor: pointer;
     outline: none;
     border-radius: 5px;
+    margin-left: 230px;
     background-color: darkslategray;
     color: white;
 }

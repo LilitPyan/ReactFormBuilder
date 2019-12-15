@@ -2,7 +2,6 @@ import './HeaderText.module.css';
 import React from 'react';
 import {MdDelete} from 'react-icons/md';
 import HeaderTextPopup from "../../Editable components/HeaderTextPopup/HeaderTextPopup";
-import ITEMS from "../../App/data";
 
 import style from './HeaderText.module.css';
 
@@ -10,18 +9,20 @@ class HeaderText extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerName: 'Header text...'
+      headerName:'Header text...'
     };
   }
 
   dataCallback = (headerInfo) => {
-    this.setState({ headerName: headerInfo },
-      () => this.props.data.unshift(headerInfo));
+    this.setState({ headerName: headerInfo},
+      () => this.props.data.push(headerInfo));
+    console.log(this.props.data);
+
   };
 
-  delete = () => {
-    this.props.dataCall(this.props.id);
-  };
+
+
+
 
   render() {
     const { headerName } = this.state;

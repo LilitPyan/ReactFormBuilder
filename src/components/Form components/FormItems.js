@@ -5,10 +5,9 @@ function FormItems({id, data}) {
   switch (id) {
     case 1:
       return (
-        <h4 className={style.form_header}>
-          {data[0]}
-        </h4>
+            <h4 className={style.form_header}>{data}</h4>
       );
+
     case 2:
       return (
         <label className={style.form_label}>

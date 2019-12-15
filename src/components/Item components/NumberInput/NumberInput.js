@@ -18,7 +18,7 @@ class NumberInput extends React.Component {
   };
 
   delete = () => {
-    this.props.dataCall(this.props.id);
+    this.props.dataCallId(this.props.id);
   };
 
   render() {
